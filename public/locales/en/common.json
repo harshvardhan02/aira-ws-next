@@ -1,6 +1,7 @@
 {
-  "platform": "PLATFORM",
-  "solutions": "SOLUTIONS",
-  "resources": "RESOURCES",
-  "company": "COMPANY"
+  "Platform": "PLATFORM",
+  "Solutions": "SOLUTIONS",
+  "Resources": "RESOURCES",
+  "Company": "COMPANY",
+  "home": "home"
 }

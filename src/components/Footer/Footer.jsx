@@ -14,6 +14,8 @@ import _ from "lodash";
 import Colors from '@/common/Colorscomponents';
 import NewsLetter from '../NewsLetter/NewsLetter';
 import FooterLinks from '../FooterLinks/FooterLinks';
+import { useTranslation } from 'next-i18next'
+// import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 // import FlagFrance from "/FlagFrance.png";
 // import FlagIndia from "/flagIndia.png";
 // import FlagSaudi from "/flagSaudi.png";
@@ -151,6 +153,7 @@ const FOOTERLINKS = [
 ];
 
 const Footer = () => {
+  const { t } = useTranslation('footer')
   return (
     <Box>
       <Grid
@@ -221,7 +224,7 @@ const Footer = () => {
                             },
                           }}
                         >
-                          {listItem.label}
+                          {t(listItem.label)}
                         </Typography>
                       );
                     })}

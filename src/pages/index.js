@@ -18,7 +18,8 @@ const montserrat = Montserrat({
 
 const EBONYHEIGHT = "600";
 
-export default function Home() {
+function Home() {
+  const { t } = useTranslation('common')
   return (
     <>
       <Head>
@@ -223,14 +224,10 @@ export default function Home() {
   )
 }
 
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, [
-        'common',
-        'footer',
-      ])),
-      // Will be passed to the page component as props
-    },
-  }
-}
+export const getServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common', 'footer'])),
+  },
+})
+
+export default Home;

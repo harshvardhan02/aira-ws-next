@@ -9,7 +9,7 @@ import Link from 'next/link';
 import CssBaseline from '@mui/material/CssBaseline';
 import _ from "lodash";
 import { useRouter } from 'next/router';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
@@ -28,6 +28,7 @@ import styles from './Header.module.css';
 import Image from 'next/image';
 import RoundedButton from '../RoundedButton/RoundedButton';
 import TryAiraDialog from '../TryAiraDialog/TryAiraDialog';
+// import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 
 const drawerWidth = 280;
@@ -120,7 +121,7 @@ const ESButton = styled.button`
 
 const Header = () => {
   const location = useRouter();
-  console.log("🚀 ~ file: Header.jsx:120 ~ Header ~ location:", location)
+  const { locale, locales, push } = useRouter();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [openTryAIRADialog, setOpenTryAIRADialog] = useState(false);
   const [languageAnchorEl, setLanguageAnchorEl] = React.useState(null);
@@ -128,7 +129,7 @@ const Header = () => {
   const [megaMenu, setMegaMenu] = useState(null)
   const openMegaMenu = Boolean(megaMenu)
   const openLanguageMenu = Boolean(languageAnchorEl);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation('common');
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const [openList, setOpen] = React.useState({
@@ -162,10 +163,11 @@ const Header = () => {
   };
 
   const handleLanguageChange = (e, id) => {
-    console.log("🚀 ~ file: Header.jsx:141 ~ handleLanguageChange ~ id:", id)
-    document.dir = _.isEqual(id, "ar") ? "rtl" : "ltr";
-    i18n.changeLanguage(id);
+    // console.log("🚀 ~ file: Header.jsx:141 ~ handleLanguageChange ~ id:", id)
+    // document.dir = _.isEqual(id, "ar") ? "rtl" : "ltr";
+    // i18n.changeLanguage(id);
     // console.log(i18n.changeLanguage(id))
+    push('/', undefined, { locale: id })
     handleLanguageClose();
   };
 
@@ -415,5 +417,11 @@ const Header = () => {
     </Box>
   )
 }
+
+// export const getServerSideProps = async ({ locale }) => ({
+//   props: {
+//     ...(await serverSideTranslations(locale, ['common'])),
+//   },
+// })
 
 export default Header
