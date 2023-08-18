@@ -48,7 +48,7 @@ const navlinks = [
     icon: <GiHumanTarget fontSize={ICON_SIZE} />,
   },
   {
-    title: "Partnership Portal Page.",
+    title: "Partnership Portal Page",
     id: "company/partnership_portal_page",
     icon: <GiHumanPyramid fontSize={ICON_SIZE} />,
   },

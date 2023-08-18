@@ -28,7 +28,7 @@ function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box sx={{ pt: 9 }}>
+      <Box sx={{ pt: 7 }}>
         <main className={montserrat.className}>
           <Paper sx={{ mt: 2, position: "relative" }} elevation={0}>
             <Grid container spacing={1}>
@@ -136,7 +136,7 @@ function Home() {
                     border: `1px solid ${Colors.airaPrimary}`,
                   }}
                 ></div>
-                <img
+                <Image
                   src="/images/home/learnmore.png"
                   alt="Learn More"
                   height={400}
@@ -197,14 +197,15 @@ function Home() {
                 top: 0,
               }}
             >
-              <img
+              <Image
                 src="/images/home/ebony.png"
                 alt="contact us"
-                width="100%"
+                width="500"
+                sizes="100vw"
                 height={EBONYHEIGHT}
                 style={{
                   zIndex: 1,
-                  marginRight: "10px",
+                  // marginRight: "10px",
                   alignSelf: "flex-end",
                 }}
               />

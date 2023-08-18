@@ -19,6 +19,7 @@ import Slide from "@mui/material/Slide";
 import { MuiTelInput } from "mui-tel-input";
 import * as React from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
+import Image from 'next/image'
 
 
 const TryAiraDialog = (props) => {
@@ -47,7 +48,7 @@ const TryAiraDialog = (props) => {
             sx={{ mb: 4 }}
           >
             <Box>
-              <img src="/airalogo.svg" alt="AIRA Logo" />
+              <Image width={120} height={60} src="/airalogo.svg" alt="AIRA Logo" />
             </Box>
             <Box sx={{ textAlign: "center" }}>
               <Typography variant="body1" sx={{ fontWeight: 700 }}>
@@ -236,11 +237,11 @@ const TryAiraDialog = (props) => {
               </Card>
             </Grid>
             <Grid item xs={12} md={6} sx={{ zIndex: 1 }}>
-              <img
-                src="images/contact_us.png"
+              <Image
+                src="/images/contact_us.png"
                 alt="Try AIRA"
-                height="100%"
-                width="100%"
+                height="100"
+                width="100"
                 style={{
                   objectFit: "cover",
                   borderRadius: "10px",

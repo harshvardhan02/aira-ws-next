@@ -70,6 +70,48 @@ const platformPages = [
   { name: "Predictive Analytics", route: "/platform/predictive_analytics" },
 ]
 
+const solutionPages = [
+  { name: "Manufacturing", route: "/solutions/manufacturing" },
+  { name: "Telecom Automation", route: "/solutions/telecom" },
+  { name: "Banking and Finance", route: "/solutions/banking_and_finance" },
+  { name: "BPO", route: "/solutions/bpo" },
+  { name: "Insurance", route: "/solutions/insurance" },
+  { name: "Retail", route: "/solutions/retail" },
+  { name: "Aviation", route: "/solutions/aviation" },
+  { name: "Healthcare", route: "/solutions/healthcare" },
+  { name: "Supply Chain", route: "/solutions/supply_chain" },
+  { name: "Human Resource", route: "/solutions/human_resource" },
+  { name: "Marketing Sales", route: "/solutions/marketing_and_sales" },
+  { name: "Customer Service", route: "/solutions/customer_service" },
+  { name: "Service Now", route: "/solutions/service_now" },
+  { name: "Salesforce", route: "/solutions/salesforce" },
+  { name: "SAP", route: "/solutions/sap" },
+  { name: "JIRA", route: "/solutions/jira" },
+  { name: "AWS", route: "/solutions/aws" },
+  { name: "Oracle", route: "/solutions/oracle" },
+  { name: "Hubspot", route: "/solutions/hubspot" },
+]
+
+const resourcePages = [
+  { name: "Blogs", route: "/resources/blogs" },
+  { name: "Success Stories", route: "/resources/success_stories" },
+  { name: "White paper", route: "/resources/whitepapers" },
+  { name: "Events", route: "/resources/events" },
+  { name: "Brochure", route: "/resources/brochures" },
+  { name: "Documentation", route: "/resources/documentation" },
+  { name: "Testimonials", route: "/resources/testimonials" }
+]
+
+const companyPages = [
+  { name: "About us", route: "/company/about_us" },
+  { name: "Leadership Team", route: "/company/leadership_team" },
+  { name: "Pricing", route: "/company/pricing" },
+  { name: "Careers at AIRA", route: "/company/careers" },
+  { name: "Corporate Social Responsibility", route: "/company/csr" },
+  { name: "Partner", route: "/company/partner" },
+  { name: "Partnership Portal Page", route: "/company/partnership_portal_page" },
+]
+
 export const navPages = [
   { lid: "platform", name: "Platform", id: "/platform" },
   { lid: "solutions", name: "Solutions", id: "/solutions" },
@@ -109,15 +151,6 @@ const getDesiredWidth = (id) => {
     return '250px'
   }
 }
-
-const ESButton = styled.button`
-  font-family: "Montserrat";
-  font-weight: 600;
-  line-height: 24px;
-  font-size: 14px;
-  min-width: 64px;
-    padding: 6px 8px;
-`;
 
 const Header = () => {
   const location = useRouter();
@@ -164,7 +197,7 @@ const Header = () => {
 
   const handleLanguageChange = (e, id) => {
     // console.log("🚀 ~ file: Header.jsx:141 ~ handleLanguageChange ~ id:", id)
-    // document.dir = _.isEqual(id, "ar") ? "rtl" : "ltr";
+    document.dir = _.isEqual(id, "ar") ? "rtl" : "ltr";
     // i18n.changeLanguage(id);
     // console.log(i18n.changeLanguage(id))
     push('/', undefined, { locale: id })
@@ -211,13 +244,13 @@ const Header = () => {
         </ListItemButton>
         <Collapse in={openList.toggle1} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            {platformPages.map((item, idx) => {
-              <ListItemButton sx={{ pl: 4 }}>
-                <Link style={{ textDecoration: "none" }} href={item.route}>
+            {platformPages.map((item, idx) => (
+              <ListItemButton onClick={handleDrawerToggle} sx={{ pl: 4, borderBottom: '1px solid #CDCDCD' }} key={idx}>
+                <Link style={{ textDecoration: "none", color: '#000' }} href={item.route}>
                   <Typography>{item.name}</Typography>
                 </Link>
               </ListItemButton>
-            })}
+            ))}
           </List>
         </Collapse>
       </List>
@@ -228,9 +261,13 @@ const Header = () => {
         </ListItemButton>
         <Collapse in={openList.toggle2} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemText primary="Starred" />
-            </ListItemButton>
+            {solutionPages.map((item, idx) => (
+              <ListItemButton onClick={handleDrawerToggle} sx={{ pl: 4, borderBottom: '1px solid #CDCDCD' }} key={idx}>
+                <Link style={{ textDecoration: "none", color: '#000' }} href={item.route}>
+                  <Typography>{item.name}</Typography>
+                </Link>
+              </ListItemButton>
+            ))}
           </List>
         </Collapse>
       </List>
@@ -241,9 +278,13 @@ const Header = () => {
         </ListItemButton>
         <Collapse in={openList.toggle3} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemText primary="Starred" />
-            </ListItemButton>
+            {resourcePages.map((item, idx) => (
+              <ListItemButton onClick={handleDrawerToggle} sx={{ pl: 4, borderBottom: '1px solid #CDCDCD' }} key={idx}>
+                <Link style={{ textDecoration: "none", color: '#000' }} href={item.route}>
+                  <Typography>{item.name}</Typography>
+                </Link>
+              </ListItemButton>
+            ))}
           </List>
         </Collapse>
       </List>
@@ -254,9 +295,13 @@ const Header = () => {
         </ListItemButton>
         <Collapse in={openList.toggle4} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemText primary="Starred" />
-            </ListItemButton>
+            {companyPages.map((item, idx) => (
+              <ListItemButton onClick={handleDrawerToggle} sx={{ pl: 4, borderBottom: '1px solid #CDCDCD' }} key={idx}>
+                <Link style={{ textDecoration: "none", color: '#000' }} href={item.route}>
+                  <Typography>{item.name}</Typography>
+                </Link>
+              </ListItemButton>
+            ))}
           </List>
         </Collapse>
       </List>
@@ -327,10 +372,10 @@ const Header = () => {
 
           <Stack direction="row" gap={4}>
             <Stack direction="row">
-              <IconButton sx={{ m: 0 }} onClick={() => { }} size="small">
+              <IconButton sx={{ m: 0, display: { xs: "none", md: 'block' } }} onClick={() => { }} size="small">
                 <Image height={50} width={50} src="/search.svg" alt="Search" />
               </IconButton>
-              <IconButton sx={{ m: 0 }} onClick={() => { }} size="small">
+              <IconButton sx={{ m: 0, display: { xs: "none", md: 'block' } }} onClick={() => { }} size="small">
                 <Image height={50} width={50} src="/support.svg" alt="Support" />
               </IconButton>
               <IconButton sx={{ m: 0 }} onClick={() => { }} size="small">

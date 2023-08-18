@@ -9,6 +9,7 @@ import {
 import parse from 'html-react-parser';
 import { useRouter } from 'next/router';
 import Metatags from '../../../components/Seo/Metatags';
+import Image from 'next/image'
 
 const image = "https://aira.fr/wp-content/uploads/elementor/thumbs/Untitled-design-2022-06-08T163035.560-q1ma2yi36u5t2iq96fdfepmf58unjb8u6ss2xl6hls.png";
 const content = `<div class="elementor-widget-container">
@@ -127,7 +128,7 @@ const content = `<div class="elementor-widget-container">
 		</div>`
 
 const index = () => {
-  const router = useRouter()
+  // const router = useRouter()
   // const { id } = router.query;
   return (
     <Container maxWidth="lg">
@@ -139,7 +140,9 @@ const index = () => {
         locale="en_US"
       />
       <Box sx={{ my: 10 }}>
-        <img
+        <Image
+          width={"100%"}
+          height="auto"
           src={image}
           alt={"title"}
           style={{

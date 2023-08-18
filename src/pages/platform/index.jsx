@@ -17,72 +17,72 @@ const SOLUTIONSDATA = [
   {
     title: "Hyper-automation Solution",
     desc: "Patris Scipionis florem diuturnum et adult.",
-    icon: "/banking.svg",
-    route: "banking",
+    icon: "banking.svg",
+    route: "platform/has",
   },
   {
     title: "Robotic Process automation",
     desc: "Patris Scipionis florem diuturnum et adult.",
     icon: "insurance.svg",
-    route: "insurance",
+    route: "platform/rpa",
   },
   {
     title: "AI / ML",
     desc: "Patris Scipionis florem diuturnum et adult.",
     icon: "healthcare.svg",
-    route: "healthcare",
+    route: "platform/aiml",
   },
   {
     title: "IDP",
     desc: "Patris Scipionis florem diuturnum et adult.",
     icon: "telecom.svg",
-    route: "telecom",
+    route: "platform/idp",
   },
   {
     title: "NLP",
     desc: "Patris Scipionis florem diuturnum et adult.",
     icon: "retail.svg",
-    route: "retail",
+    route: "platform/nlp",
   },
   {
     title: "Workflow",
     desc: "Patris Scipionis florem diuturnum et adult.",
     icon: "bpo.svg",
-    route: "bpo",
+    route: "platform/workflow",
   },
   {
     title: "Orchestrator",
     desc: "Patris Scipionis florem diuturnum et adult.",
     icon: "manufacturing.svg",
-    route: "manufacturing",
+    route: "platform/orchestrator",
   },
   {
     title: "Predictive Analytics",
     desc: "Patris Scipionis florem diuturnum et adult.",
     icon: "manufacturing.svg",
-    route: "manufacturing",
+    route: "platform/predictive_analytics",
   },
   {
     title: "Process mining",
     desc: "Patris Scipionis florem diuturnum et adult.",
     icon: "manufacturing.svg",
-    route: "manufacturing",
+    route: "platform/process_mining",
   },
   {
     title: "Advanced Analytics",
     desc: "Patris Scipionis florem diuturnum et adult.",
     icon: "manufacturing.svg",
-    route: "manufacturing",
+    route: "platform/advancedAnalytics",
   },
 ];
 
 
 const index = () => {
-  const router = useRouter()
+  // const router = useRouter()
 
-  const navigateToRoute = (route) => {
-    router.push(`/${route}`)
-  }
+  // const navigateToRoute = (route) => {
+  //   router.push(`/${route}`)
+  // }
 
 
   return (
