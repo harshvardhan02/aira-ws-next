@@ -240,12 +240,10 @@ const TryAiraDialog = (props) => {
               <Image
                 src="/images/contact_us.png"
                 alt="Try AIRA"
-                height="100"
-                width="100"
-                style={{
-                  objectFit: "cover",
-                  borderRadius: "10px",
-                }}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
               />
             </Grid>
           </Grid>
