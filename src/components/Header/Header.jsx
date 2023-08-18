@@ -197,7 +197,7 @@ const Header = () => {
 
   const handleLanguageChange = (e, id) => {
     // console.log("🚀 ~ file: Header.jsx:141 ~ handleLanguageChange ~ id:", id)
-    document.dir = _.isEqual(id, "ar") ? "rtl" : "ltr";
+    // document.dir = _.isEqual(id, "ar") ? "rtl" : "ltr";
     // i18n.changeLanguage(id);
     // console.log(i18n.changeLanguage(id))
     push('/', undefined, { locale: id })
