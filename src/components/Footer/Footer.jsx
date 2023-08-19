@@ -206,8 +206,8 @@ const Footer = () => {
           >
             {FOOTERLINKS.map((item, idx) => {
               return (
-                <Grid item container justifyContent="space-between" xs={12} lg={4}>
-                  <Box sx={{ width: '100%' }} key={idx} {...item.gridValue}>
+                <Grid key={idx} item container justifyContent="space-between" xs={12} lg={4}>
+                  <Box sx={{ width: '100%' }} {...item.gridValue}>
                     <Typography
                       variant="body1"
                       sx={{ fontWeight: 700, color: Colors.airaSecondary }}
