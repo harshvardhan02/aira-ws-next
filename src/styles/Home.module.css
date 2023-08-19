@@ -45,3 +45,30 @@
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+
+.macbookImage {
+  width: 100%;
+  height: auto;
+}
+
+.offeringImage {
+  margin-right: -100px;
+  border-radius: 10px;
+  width: 100%;
+  height: auto
+}
+
+
+@media (max-width: 600px) {
+  .macbookImage {
+    width: 55%;
+    height: auto;
+  }
+
+  .offeringImage {
+    margin-right: 0px;
+    border-radius: 10px;
+    width: 100%;
+    height: auto
+  }
+}

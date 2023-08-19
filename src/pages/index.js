@@ -1,13 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Box, Grid, Paper, Stack, Typography } from "@mui/material";
+import { Box, Grid, Paper, Stack, Typography, Container } from "@mui/material";
 import Colors from '@/common/Colorscomponents';
 import AIRAMonoLinesLeft from '@/components/AIRAMonoLinesLeft/AIRAMonoLinesLeftcomponents';
 import RoundedButton from '@/components/RoundedButton/RoundedButtoncomponents';
-import ESImage from '@/common/ESImagecomponents';
 import macBookImage from '../../public/images/home/macbook.svg'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-i18next';
+import styles from '../styles/Home.module.css'
+import RefereceStack from '@/components/ReferenceStack/RefereceStackcomponents';
+import PowerOfIntelligence from '@/components/PowerOfIntelligence/PowerOfIntelligencecomponents';
+import Offering from '@/components/Offering/Offeringcomponents';
+import ConnectToSystem from '@/components/ConnectToSystem/ConnectToSystemcomponents';
+import DiscoverStack from './DiscoverStack/DiscoverStack';
 
 const EBONYHEIGHT = "600";
 
@@ -21,34 +26,27 @@ function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/svg+xml" href="/monogram.svg" />
       </Head>
-      <Box sx={{ pt: 7 }}>
-        <main>
-          <Paper sx={{ mt: 2, position: "relative" }} elevation={0}>
-            <Grid container spacing={1}>
-              <Grid item xs={1}></Grid>
-              <Grid
-                item
-                xs={12}
-                md={9}
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  minHeight: `${EBONYHEIGHT}px`,
-                }}
-              >
-                <Stack
-                  gap={4}
-                  direction="row"
-                  alignItems="center"
-                  justifyContent="center"
+
+      <Box sx={{ pt: { xs: 8.5, md: 0 } }}>
+        <Paper sx={{ position: "relative" }} elevation={0}>
+          <Grid
+            container
+            justifyContent="center"
+            alignItems="center"
+            flexDirection={{ xs: "column-reverse", md: "row" }}
+          >
+            <Grid item xs={12} md={6}>
+              <Container>
+                <Box
                   sx={{
-                    zIndex: 2,
-                    paddingLeft: "100px",
+                    width: '100%',
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                    alignItems: 'flex-end',
+                    flexDirection: 'column'
                   }}
                 >
-                  <Stack direction="column">
+                  <Box sx={{ width: { xs: '100%', md: '60%' }, pt: { xs: 5, md: 0 } }}>
                     <Typography variant="h4" sx={{ fontWeight: 800 }}>
                       Revolutionize Your Productivity With{" "}
                       <span style={{ color: Colors.airaSecondary }}>
@@ -63,156 +61,172 @@ function Home() {
                       Say goodbye to manual tasks and hello to a more efficient and
                       profitable enterprise.
                     </Typography>
-                    <div>
-                      <RoundedButton label="Request Demo" sx={{ mt: 3 }} />
-                    </div>
-                  </Stack>
+                    <RoundedButton label="Request Demo" sx={{ mt: 3 }} />
+                  </Box>
+                </Box>
+              </Container>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box
+                sx={{
+                  width: "100%",
+                  backgroundImage: "url(/images/home/ebony.png)",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "right top",
+                  backgroundSize: 'cover',
+                  height: '55vw',
+                  display: 'flex',
+                  justifyContent: 'start',
+                  alignItems: 'center',
+                }}
+              >
+                <Box sx={{ py: 5 }}>
+                  <Image
+                    src={macBookImage}
+                    width={0}
+                    height={0}
+                    alt='AIRA'
+                    sizes="100vw"
+                    // style={{ width: '100%', height: 'auto' }}
+                    className={styles.macbookImage}
+                  />
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
+
+          <Container maxWidth="lg">
+            <Grid
+              sx={{ pt: 4 }}
+              container
+              spacing={5}
+              justifyContent="left"
+              alignItems="center"
+            >
+              <Grid item xs={12} md={6}>
+                <div style={{ position: "relative" }}>
                   <div
                     style={{
-                      zIndex: 2,
-                      alignSelf: "flex-end",
-                      paddingLeft: "30px",
+                      height: "140px",
+                      width: "40px",
+                      position: "absolute",
+                      transform: "rotate(35deg)",
+                      borderRadius: "50px",
+                      backgroundColor: Colors.airaPrimary,
+                      top: 150,
+                      marginLeft: "-30px",
                     }}
-                  >
-                    <ESImage
-                      priority
-                      src={macBookImage}
-                      alt="AIRA Macbook"
-                      width="430px"
-                      height="230px"
-                      style={{
-                        zIndex: 2,
-                      }}
-                    />
+                  ></div>
+                  <div
+                    style={{
+                      height: "140px",
+                      width: "40px",
+                      top: 200,
+                      transform: "rotate(35deg)",
+                      position: "absolute",
+                      borderRadius: "50px",
+                      backgroundColor: Colors.airaSecondary,
+                    }}
+                  ></div>
+                  <div
+                    style={{
+                      height: "140px",
+                      width: "40px",
+                      transform: "rotate(35deg)",
+                      top: 250,
+                      position: "absolute",
+                      borderRadius: "50px",
+                      marginLeft: "35px",
+                      border: `1px solid ${Colors.airaPrimary}`,
+                    }}
+                  ></div>
+                  <Image
+                    src="/images/home/learnmore.png"
+                    alt="bankingheader"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto', zIndex: 2 }}
+                  />
+                </div>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Stack direction="column" sx={{ py: 2 }}>
+                  <Typography variant="h5" sx={{ fontsize: "20 px", fontWeight: 700 }}>
+                    <span style={{ color: Colors.airaSecondary }}>AIRA:</span>{" "}
+                    Artificially Intelligent Robotic Automation
+                  </Typography>
+                  <Typography variant="body1" sx={{ mt: 2, fontWeight: 600 }}>
+                    Automated Bots for your Digital Transformation
+                  </Typography>
+                  <Typography variant="body1" sx={{ mt: 2, lineHeight: 2 }}>
+                    Introducing AIRA, an AI and ML-powered digital agent that automates
+                    your everyday tasks and business processes through robotic
+                    automation. It integrates with digital technologies and legacy
+                    systems, freeing your workforce from low-output tasks. With AIRA,
+                    you can create personalised low-code/no-code automated workflows.
+                  </Typography>
+                  <div>
+                    <RoundedButton label="Learn more" sx={{ mt: 3 }} />
                   </div>
                 </Stack>
               </Grid>
             </Grid>
-            <Stack
-              direction="row"
-              gap={10}
-              sx={{ width: "70%", margin: "0 auto", py: 10 }}
-            >
-              <div style={{ position: "relative" }}>
-                <div
-                  style={{
-                    height: "140px",
-                    width: "40px",
-                    position: "absolute",
-                    transform: "rotate(35deg)",
-                    borderRadius: "50px",
-                    backgroundColor: Colors.airaPrimary,
-                    top: 150,
-                    marginLeft: "-30px",
-                  }}
-                ></div>
-                <div
-                  style={{
-                    height: "140px",
-                    width: "40px",
-                    top: 200,
-                    transform: "rotate(35deg)",
-                    position: "absolute",
-                    borderRadius: "50px",
-                    backgroundColor: Colors.airaSecondary,
-                  }}
-                ></div>
-                <div
-                  style={{
-                    height: "140px",
-                    width: "40px",
-                    transform: "rotate(35deg)",
-                    top: 250,
-                    position: "absolute",
-                    borderRadius: "50px",
-                    marginLeft: "35px",
-                    border: `1px solid ${Colors.airaPrimary}`,
-                  }}
-                ></div>
-                <Image
-                  src="/images/home/learnmore.png"
-                  alt="Learn More"
-                  height={400}
-                  width={400}
-                  style={{
-                    zIndex: 2,
-                  }}
-                />
-              </div>
-              <Stack direction="column" sx={{ py: 2 }}>
-                <Typography variant="h5" sx={{ fontsize: "20 px", fontWeight: 700 }}>
-                  <span style={{ color: Colors.airaSecondary }}>AIRA:</span>{" "}
-                  Artificially Intelligent Robotic Automation
-                </Typography>
-                <Typography variant="body1" sx={{ mt: 2, fontWeight: 600 }}>
-                  Automated Bots for your Digital Transformation
-                </Typography>
-                <Typography variant="body1" sx={{ mt: 2, lineHeight: 2 }}>
-                  Introducing AIRA, an AI and ML-powered digital agent that automates
-                  your everyday tasks and business processes through robotic
-                  automation. It integrates with digital technologies and legacy
-                  systems, freeing your workforce from low-output tasks. With AIRA,
-                  you can create personalised low-code/no-code automated workflows.
-                </Typography>
-                <div>
-                  <RoundedButton label="Learn more" sx={{ mt: 3 }} />
-                </div>
-              </Stack>
-            </Stack>
+          </Container>
 
-            <Stack sx={{ width: "60%", margin: "0 auto" }}>
-              {/* <DiscoverStack /> */}
-              <Box sx={{ alignSelf: "center", pt: 3 }}>
-                <RoundedButton label="Try AIRA" sx={{ px: 5 }} />
-              </Box>
-            </Stack>
-
-            <Box sx={{ my: 6 }}>
-              {/* <ReferencesStack /> */}
+          <Container maxWidth="lg">
+            <DiscoverStack />
+            <Box sx={{ display: "flex", justifyContent: "center", alignSelf: "center", pt: 3 }}>
+              <RoundedButton label="Try AIRA" sx={{ px: 5 }} />
             </Box>
-
-            <Box sx={{ width: "70%", margin: "0 auto" }}>
-              {/* <PowerOfIntelligence /> */}
+            <Box sx={{ py: 6 }}>
+              <RefereceStack />
             </Box>
-
-            <Box sx={{ my: 5 }}>
-              {/* <Offering /> */}
+            <Box>
+              <PowerOfIntelligence />
             </Box>
-
-            <Box sx={{ width: "80%", margin: "0 auto", my: 10 }}>
-              {/* <ConnectToSystem /> */}
+            <Box>
+              <Offering />
             </Box>
+            <Box>
+              <ConnectToSystem />
+            </Box>
+          </Container>
 
-            <div
+          {/* <div
+            style={{
+              position: "absolute",
+              right: 0,
+              top: 0,
+            }}
+          >
+            <Image
+              src="/images/home/ebony.png"
+              alt="contact us"
+              width="500"
+              sizes="100vw"
+              height={EBONYHEIGHT}
               style={{
-                position: "absolute",
-                right: 0,
-                top: 0,
+                zIndex: 1,
+                // marginRight: "10px",
+                alignSelf: "flex-end",
               }}
-            >
-              <Image
-                src="/images/home/ebony.png"
-                alt="contact us"
-                width="500"
-                sizes="100vw"
-                height={EBONYHEIGHT}
-                style={{
-                  zIndex: 1,
-                  // marginRight: "10px",
-                  alignSelf: "flex-end",
-                }}
-              />
-            </div>
-            <div
-              style={{
-                position: "absolute",
-                top: 100,
-              }}
-            >
-              <AIRAMonoLinesLeft />
-            </div>
-          </Paper>
-        </main>
+            />
+          </div> */}
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 100,
+              display: { xs: 'none', md: 'block' }
+            }}
+          // style={{
+          //   position: "absolute",
+          //   top: 100,
+          // }}
+          >
+            <AIRAMonoLinesLeft />
+          </Box>
+        </Paper>
       </Box>
     </>
   )
