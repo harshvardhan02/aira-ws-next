@@ -15,6 +15,7 @@ import Colors from '@/common/Colorscomponents';
 import NewsLetter from '../NewsLetter/NewsLetter';
 import FooterLinks from '../FooterLinks/FooterLinks';
 import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router';
 // import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 // import FlagFrance from "/FlagFrance.png";
 // import FlagIndia from "/flagIndia.png";
@@ -109,13 +110,13 @@ const FOOTERLINKS = [
   {
     title: "Company",
     lists: [
-      { label: "About us", route: "about_us" },
-      { label: "Career", route: "career" },
-      { label: "Leadership Team", route: "leadership_team" },
-      { label: "Documentation", route: "documentation" },
-      { label: "Pricing", route: "pricing" },
-      { label: "Licence", route: "licence" },
-      { label: "Partner", route: "partner" },
+      { label: "About us", route: "company/about_us" },
+      { label: "Career", route: "company/careers" },
+      { label: "Leadership Team", route: "company/leadership_team" },
+      { label: "Documentation", route: "resources/documentation" },
+      { label: "Pricing", route: "company/pricing" },
+      { label: "Licence", route: "company/licence" },
+      { label: "Partner", route: "company/partner" },
     ],
     gridValue: { xs: 12, md: 3 },
   },
@@ -124,21 +125,21 @@ const FOOTERLINKS = [
     lists: [
       {
         label: "Hyper-automation Solution",
-        route: "hyper_automation_solution",
+        route: "platform/has",
       },
-      { label: "AI/ML", route: "ai_ml" },
+      { label: "AI/ML", route: "platform/aiml" },
       {
         label: "Robotic Process automation",
-        route: "robotic_process_automation",
+        route: "platform/rpa",
       },
       {
         label: "Intelligent Document processing",
-        route: "intelligent_document_processing",
+        route: "platform/idp",
       },
-      { label: "Workflow", route: "workflow" },
-      { label: "Orchestrator", route: "orchestrator" },
-      { label: "Predictive Analytics", route: "predictive_analytics" },
-      { label: "Process mining", route: "process_mining" },
+      { label: "Workflow", route: "platform/workflow" },
+      { label: "Orchestrator", route: "platform/orchestrator" },
+      { label: "Predictive Analytics", route: "platform/predictive_analytics" },
+      { label: "Process mining", route: "platform/process_mining" },
     ],
     gridValue: { xs: 12, md: 4 },
   },
@@ -153,7 +154,13 @@ const FOOTERLINKS = [
 ];
 
 const Footer = () => {
-  const { t } = useTranslation('footer')
+  const { t } = useTranslation('footer');
+  const router = useRouter();
+
+  const footerNavigation = (route) => {
+    router.push(`/${route}`)
+  }
+
   return (
     <Box>
       <Grid
@@ -188,48 +195,51 @@ const Footer = () => {
           direction="row"
           justifyContent="space-between"
           alignItems="center"
-          // rowSpacing={1}
-          columnSpacing={{ xs: 2, sm: 3, md: 12, lg: 6 }}
+          rowSpacing={1}
+        // columnSpacing={{ xs: 2, sm: 3, md: 12, lg: 6 }}
         >
           <Grid
             item
             container
             justifyContent="space-between"
-            xs={2} sm={12} md={12} lg={6}
+            xs={12} sm={12} md={12} lg={7}
           >
             {FOOTERLINKS.map((item, idx) => {
               return (
-                <Box key={idx} {...item.gridValue}>
-                  <Typography
-                    variant="body1"
-                    sx={{ fontWeight: 700, color: Colors.airaSecondary }}
-                  >
-                    {item.title}
-                  </Typography>
-                  <Box gap={1} sx={{ my: 1 }}>
-                    {item.lists.map((listItem, listIdx) => {
-                      return (
-                        <Typography
-                          my={1}
-                          variant="subtitle2"
-                          className="text-nowrap"
-                          key={listItem.route}
-                          sx={{
-                            cursor: "pointer",
-                            "&:hover": {
-                              //color: Colors.airaPrimary,
-                              //color: "#000",
-                              // fontWeight: 600,
-                              color: Colors.airaSecondary,
-                            },
-                          }}
-                        >
-                          {t(listItem.label)}
-                        </Typography>
-                      );
-                    })}
+                <Grid item container justifyContent="space-between" xs={12} lg={4}>
+                  <Box sx={{ width: '100%' }} key={idx} {...item.gridValue}>
+                    <Typography
+                      variant="body1"
+                      sx={{ fontWeight: 700, color: Colors.airaSecondary }}
+                    >
+                      {item.title}
+                    </Typography>
+                    <Box gap={1} sx={{ my: 1 }}>
+                      {item.lists.map((listItem, listIdx) => {
+                        return (
+                          <Typography
+                            onClick={() => footerNavigation(listItem.route)}
+                            my={1}
+                            variant="subtitle2"
+                            className="text-nowrap"
+                            key={listItem.route}
+                            sx={{
+                              cursor: "pointer",
+                              "&:hover": {
+                                //color: Colors.airaPrimary,
+                                //color: "#000",
+                                // fontWeight: 600,
+                                color: Colors.airaSecondary,
+                              },
+                            }}
+                          >
+                            {t(listItem.label)}
+                          </Typography>
+                        );
+                      })}
+                    </Box>
                   </Box>
-                </Box>
+                </Grid>
               );
             })}
           </Grid>
@@ -239,7 +249,7 @@ const Footer = () => {
             direction="row"
             justifyContent="flex-start"
             alignItems="flex-start"
-            xs={12} sm={12} md={12} lg={6}
+            xs={12} sm={12} md={12} lg={5}
           >
             <Grid
               item

@@ -389,7 +389,7 @@ const index = () => {
           top: 50,
           zIndex: -1
         }}
-        sx={{ display: { xs: 'none' } }}
+        sx={{ display: { xs: 'none', md: 'block' } }}
       >
         <AIRAMonoLinesLeft />
       </Box>

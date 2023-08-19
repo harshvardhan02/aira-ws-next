@@ -12,7 +12,7 @@ import RefereceStack from '@/components/ReferenceStack/RefereceStackcomponents';
 import PowerOfIntelligence from '@/components/PowerOfIntelligence/PowerOfIntelligencecomponents';
 import Offering from '@/components/Offering/Offeringcomponents';
 import ConnectToSystem from '@/components/ConnectToSystem/ConnectToSystemcomponents';
-import DiscoverStack from './DiscoverStack/DiscoverStack';
+import DiscoverStack from '../components/DiscoverStack/DiscoverStack';
 
 const EBONYHEIGHT = "600";
 
