@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from "styled-components";
 import { Avatar, CardHeader, Menu, MenuItem, Stack, Typography } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
@@ -140,9 +140,9 @@ const RenderPopOverView = ({ id, onLinkClick }) => {
 
 const getDesiredWidth = (id) => {
   if (id === "/platform") {
-    return '600px'
-  } else if (id === "/solutions") {
     return '700px'
+  } else if (id === "/solutions") {
+    return '750px'
   } else if (id === "/resources") {
     return '250px'
   } else if (id === "/company") {

@@ -5,21 +5,31 @@ import {
   ListItemButton,
   ListItemText,
   Typography,
+  Box
 } from "@mui/material";
 import React from "react";
 import Colors from "@/common/Colorscomponents";
-import Link from 'next/link'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 
 export const ESListButton = (props) => {
   const { sx, children } = props;
+  const router = useRouter();
+
+  const routerHandler = (route) => {
+    router.push(`/${route}`);
+    // router.reload();
+  }
+
   return (
-    <Link
-      href={`/${props.to}`}
-      style={{
-        textDecoration: "none",
-        color: "#000",
-      }}
+    <Box
+      // href={`/${props.to}`}
+      // style={{
+      //   textDecoration: "none",
+      //   color: "#000",
+      // }}
+      onClick={() => routerHandler(`${props.to}`)}
     >
       <ListItemButton
         sx={{
@@ -34,6 +44,6 @@ export const ESListButton = (props) => {
       >
         {children}
       </ListItemButton>
-    </Link>
+    </Box>
   );
 };

@@ -63,7 +63,7 @@ const index = () => {
       backgroundRepeat: "no-repeat",
       backgroundPosition: "right",
     }}>
-      <Container>
+      <Container maxWidth="lg">
         <Box sx={{ backgroundColor: "##F8F9FB", position: "relative", pt: 4 }}>
           <Grid
             container
@@ -97,7 +97,7 @@ const index = () => {
                     accedunt sunt communis qui.
                   </Typography>
                 </Box>
-                <Grid container gap={2} sx={{ p: 2, pl: 0 }}>
+                <Grid container gap={1}>
                   {SOLUTIONSDATA.map((item, idx) => {
                     return (
                       <Grid item key={idx}>
