@@ -332,18 +332,26 @@ const Header = () => {
             justifyContent: "space-between",
           }}
         >
-          <IconButton
-            color="default"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Link href="/">
-            <Image width={120} height={60} src='/airalogo.svg' alt="AIRA Logo" />
-          </Link>
+            <IconButton
+              color="default"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: 'none' } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Link href="/">
+              <Image width={120} height={60} src='/airalogo.svg' alt="AIRA Logo" />
+            </Link>
+          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, pl: 4 }}>
             {navPages.map((page, idx) => (
               <div key={idx} className={styles.dropdown} >
@@ -370,8 +378,8 @@ const Header = () => {
             ))}
           </Box>
 
-          <Stack direction="row" gap={4}>
-            <Stack direction="row">
+          <Stack direction="row" sx={{ gap: { xs: 0, md: 4 } }}>
+            <Stack direction="row" justifyContent="flex-end">
               <IconButton sx={{ m: 0, display: { xs: "none", md: 'block' } }} onClick={() => { }} size="small">
                 <Image height={50} width={50} src="/search.svg" alt="Search" />
               </IconButton>
