@@ -19,7 +19,7 @@ export const ESListButton = (props) => {
 
   const routerHandler = (route) => {
     router.push(`/${route}`);
-    // router.reload();
+    // router.reload(`/${route}`);
   }
 
   return (

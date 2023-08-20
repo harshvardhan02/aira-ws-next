@@ -48,7 +48,7 @@ const TryAiraDialog = (props) => {
             sx={{ mb: 4 }}
           >
             <Box>
-              <Image width={120} height={60} src="/airalogo.svg" alt="AIRA Logo" />
+              <Image width={120} height={60} src="/airalogo.svg" priority alt="AIRA Logo" />
             </Box>
             <Box sx={{ textAlign: "center" }}>
               <Typography variant="body1" sx={{ fontWeight: 700 }}>

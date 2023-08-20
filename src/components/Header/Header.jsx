@@ -160,7 +160,6 @@ const Header = () => {
   const [languageAnchorEl, setLanguageAnchorEl] = React.useState(null);
   const [popName, setPopName] = useState(null)
   const [megaMenu, setMegaMenu] = useState(null)
-  const openMegaMenu = Boolean(megaMenu)
   const openLanguageMenu = Boolean(languageAnchorEl);
   const { t } = useTranslation('common');
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -169,6 +168,7 @@ const Header = () => {
     toggle1: false,
     toggle2: false,
     toggle3: false,
+    toggle4: false
   });
 
   // const handleClickOpenList = () => {
@@ -233,6 +233,7 @@ const Header = () => {
             height={60}
             src='/airalogo.svg'
             alt="AIRA Logo"
+            priority
           />
         </Box>
       </Link>

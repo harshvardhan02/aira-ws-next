@@ -24,7 +24,7 @@ const NewsLetter = () => {
         >
           <Grid container item justifyContent={{ xs: "center", sm: "flex-start" }} xs={12} sm={6} md={6}>
             <Link href="/">
-              <Image width={120} height={60} src='/airalogo.svg' alt="AIRA Logo" />
+              <Image width={120} height={60} src='/airalogo.svg' priority alt="AIRA Logo" />
             </Link>
           </Grid>
           <Grid item xs={6} sm={6} md={6}>

@@ -52,7 +52,7 @@ const index = () => {
                   <Typography variant="h4" sx={{ fontWeight: 700 }}>
                     Drive digital change <br />
                     <span style={{ color: Colors.airaSecondary }}>
-                      with AIRA’s RPA
+                      with AIRA’s Banking and finance
                     </span>
                   </Typography>
                   <Typography variant="body1" sx={{ my: 3 }}>
