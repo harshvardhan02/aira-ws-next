@@ -95,7 +95,7 @@ const getIcon = (icon) => {
         />
       );
     case "mail":
-      return <Avatar src='./mail.png' alt="Mail" sx={{ width: 25, height: 25 }} />;
+      return <Avatar src='/mail.png' alt="Mail" sx={{ width: 25, height: 25 }} />;
     default:
       return (
         <Avatar
@@ -116,7 +116,7 @@ const FOOTERLINKS = [
       // { label: "Leadership Team", route: "company/leadership_team" },
       { label: "Documentation", route: "resources/documentation" },
       { label: "Pricing", route: "company/pricing" },
-      { label: "Licence", route: "company/licence" },
+      // { label: "Licence", route: "company/licence" },
       { label: "Partner", route: "company/partner" },
     ],
     gridValue: { xs: 12, md: 3 },
