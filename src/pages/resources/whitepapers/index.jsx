@@ -117,7 +117,16 @@ const WhitePaperCard = (props) => {
               <Typography variant="subtitle2" sx={{ color: "#fff" }}>
                 {duration}
               </Typography>
-              <img src={`${IMGBASEURL}/time.svg`} alt="timesvg" />
+              <Image
+                src={`${IMGBASEURL}/time.svg`}
+                alt="timesvg"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{
+                  height: "100%",
+                  width: "100%",
+                }} />
             </Stack>
           </Stack>
         </Stack>

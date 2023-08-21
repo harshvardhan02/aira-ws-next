@@ -22,11 +22,11 @@ const navlinks = [
     id: "company/about_us",
     icon: <GrContactInfo fontSize={ICON_SIZE} />,
   },
-  {
-    title: "Leadership Team",
-    id: "company/leadership_team",
-    icon: <AiOutlineTeam fontSize={ICON_SIZE} />,
-  },
+  // {
+  //   title: "Leadership Team",
+  //   id: "company/leadership_team",
+  //   icon: <AiOutlineTeam fontSize={ICON_SIZE} />,
+  // },
   {
     title: "Pricing",
     id: "company/pricing",

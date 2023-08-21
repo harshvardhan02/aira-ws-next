@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import { Box, Grid, Paper, Stack, Typography, Container } from "@mui/material";
@@ -13,11 +14,13 @@ import PowerOfIntelligence from '@/components/PowerOfIntelligence/PowerOfIntelli
 import Offering from '@/components/Offering/Offeringcomponents';
 import ConnectToSystem from '@/components/ConnectToSystem/ConnectToSystemcomponents';
 import DiscoverStack from '../components/DiscoverStack/DiscoverStack';
+import TryAiraDialog from '@/components/TryAiraDialog/TryAiraDialogcomponents';
 
 const EBONYHEIGHT = "600";
 
 function Home() {
   const { t } = useTranslation('common')
+  const [openTryAIRADialog, setOpenTryAIRADialog] = useState(false);
   return (
     <>
       <Head>
@@ -61,7 +64,9 @@ function Home() {
                       Say goodbye to manual tasks and hello to a more efficient and
                       profitable enterprise.
                     </Typography>
-                    <RoundedButton label="Request Demo" sx={{ mt: 3 }} />
+                    <RoundedButton onClick={() => {
+                      setOpenTryAIRADialog(true);
+                    }} label="Request Demo" sx={{ mt: 3 }} />
                   </Box>
                 </Box>
               </Container>
@@ -177,7 +182,9 @@ function Home() {
           <Container maxWidth="lg">
             <DiscoverStack />
             <Box sx={{ display: "flex", justifyContent: "center", alignSelf: "center", pt: 3 }}>
-              <RoundedButton label="Try AIRA" sx={{ px: 5 }} />
+              <RoundedButton onClick={() => {
+                setOpenTryAIRADialog(true);
+              }} label="Try AIRA" sx={{ px: 5 }} />
             </Box>
             <Box sx={{ py: 6 }}>
               <RefereceStack />
@@ -228,6 +235,12 @@ function Home() {
           </Box>
         </Paper>
       </Box>
+      <TryAiraDialog
+        open={openTryAIRADialog}
+        handleClose={() => {
+          setOpenTryAIRADialog(false);
+        }}
+      />
     </>
   )
 }

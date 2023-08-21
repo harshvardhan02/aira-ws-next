@@ -1,6 +1,15 @@
 import React, { useState, useRef } from 'react';
 import styled from "styled-components";
-import { Avatar, CardHeader, Menu, MenuItem, Stack, Typography } from "@mui/material";
+import {
+  Avatar,
+  Card,
+  CardHeader,
+  Menu,
+  MenuItem,
+  Stack,
+  Typography,
+  Grid
+} from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
@@ -28,6 +37,8 @@ import styles from './Header.module.css';
 import Image from 'next/image';
 import RoundedButton from '../RoundedButton/RoundedButton';
 import TryAiraDialog from '../TryAiraDialog/TryAiraDialog';
+import { BsPersonGear } from "react-icons/bs";
+import { MdSupportAgent } from "react-icons/md";
 // import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 
@@ -158,9 +169,11 @@ const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [openTryAIRADialog, setOpenTryAIRADialog] = useState(false);
   const [languageAnchorEl, setLanguageAnchorEl] = React.useState(null);
+  const [userAnchorEl, setUserAnchorEl] = React.useState(null);
   const [popName, setPopName] = useState(null)
   const [megaMenu, setMegaMenu] = useState(null)
   const openLanguageMenu = Boolean(languageAnchorEl);
+  const openUserMenu = Boolean(userAnchorEl);
   const { t } = useTranslation('common');
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -191,9 +204,17 @@ const Header = () => {
     setLanguageAnchorEl(event.currentTarget);
   };
 
+  const handleSupportClick = (e) => {
+    setUserAnchorEl(e.currentTarget)
+  }
+
   const handleLanguageClose = () => {
     setLanguageAnchorEl(null);
   };
+
+  const handleSupportClose = () => {
+    setUserAnchorEl(null)
+  }
 
   const handleLanguageChange = (e, id) => {
     // console.log("🚀 ~ file: Header.jsx:141 ~ handleLanguageChange ~ id:", id)
@@ -203,6 +224,10 @@ const Header = () => {
     push('/', undefined, { locale: id })
     handleLanguageClose();
   };
+
+  const handleNavigateSupport = () => {
+    handleSupportClose();
+  }
 
   const handleClick = (event, id) => {
     setAnchorEl(event.currentTarget);
@@ -384,9 +409,52 @@ const Header = () => {
               <IconButton sx={{ m: 0, display: { xs: "none", md: 'block' } }} onClick={() => { }} size="small">
                 <Image height={50} width={50} src="/search.svg" alt="Search" />
               </IconButton>
-              <IconButton sx={{ m: 0, display: { xs: "none", md: 'block' } }} onClick={() => { }} size="small">
-                <Image height={50} width={50} src="/support.svg" alt="Support" />
-              </IconButton>
+              <div>
+                <IconButton sx={{ m: 0, display: { xs: "none", md: 'block' } }} onClick={handleSupportClick} size="small">
+                  <Image height={50} width={50} src="/support.svg" alt="Support" />
+                </IconButton>
+                <Menu
+                  anchorEl={userAnchorEl}
+                  open={openUserMenu}
+                  onClose={handleSupportClose}
+                  MenuListProps={{
+                    "aria-labelledby": "basic-button",
+                  }}
+                  anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                  }}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                >
+                  {/* <MenuItem> */}
+                  <Grid container wrap='nowrap'>
+                    <Grid zeroMinWidth item xs={6}>
+                      <MenuItem sx={{ width: 200 }} onClick={() => handleNavigateSupport()}>
+                        <Stack direction="column" justifyContent="center">
+                          <MdSupportAgent color='#6755DF' size={25} />
+                          <Typography variant='h6' fontSize={14} fontWeight="bold">
+                            Sales Support
+                          </Typography>
+                        </Stack>
+                      </MenuItem>
+                    </Grid>
+                    <Grid zeroMinWidth item xs={6}>
+                      <MenuItem sx={{ width: 200 }} onClick={() => handleNavigateSupport()}>
+                        <Stack direction="column" justifyContent="center">
+                          <BsPersonGear color='#6755DF' size={25} />
+                          <Typography variant='h6' fontSize={14} fontWeight="bold">
+                            Technical Support
+                          </Typography>
+                        </Stack>
+                      </MenuItem>
+                    </Grid>
+                  </Grid>
+                  {/* </MenuItem> */}
+                </Menu>
+              </div>
               <IconButton sx={{ m: 0 }} onClick={() => { }} size="small">
                 <Image height={50} width={50} src="/person.svg" alt="Person" />
               </IconButton>

@@ -41,7 +41,7 @@ const navlinks = [
   },
   {
     title: "Documentation",
-    id: "resources/documentation",
+    id: "http://wiki.aira.technology:8000/en/home",
     icon: <FcDocument fontSize={ICON_SIZE} />,
   },
   {
@@ -61,6 +61,7 @@ const ResourcesPopover = () => {
               <ESListButton
                 key={id}
                 to={id}
+                title={title}
               >
                 <ListItemText disableTypography>
                   <Typography variant="subtitle2">{title}</Typography>

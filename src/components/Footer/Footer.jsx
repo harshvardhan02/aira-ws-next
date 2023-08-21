@@ -16,6 +16,7 @@ import NewsLetter from '../NewsLetter/NewsLetter';
 import FooterLinks from '../FooterLinks/FooterLinks';
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router';
+import TryAiraDialog from '../TryAiraDialog/TryAiraDialog';
 // import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 // import FlagFrance from "/FlagFrance.png";
 // import FlagIndia from "/flagIndia.png";
@@ -112,7 +113,7 @@ const FOOTERLINKS = [
     lists: [
       { label: "About us", route: "company/about_us" },
       { label: "Career", route: "company/careers" },
-      { label: "Leadership Team", route: "company/leadership_team" },
+      // { label: "Leadership Team", route: "company/leadership_team" },
       { label: "Documentation", route: "resources/documentation" },
       { label: "Pricing", route: "company/pricing" },
       { label: "Licence", route: "company/licence" },
@@ -156,6 +157,7 @@ const FOOTERLINKS = [
 const Footer = () => {
   const { t } = useTranslation('footer');
   const router = useRouter();
+  const [openTryAIRADialog, setOpenTryAIRADialog] = useState(false);
 
   const footerNavigation = (route) => {
     router.push(`/${route}`)
@@ -173,6 +175,9 @@ const Footer = () => {
           color="primary"
           variant="contained"
           className="text-nowrap"
+          onClick={() => {
+            setOpenTryAIRADialog(true);
+          }}
           sx={{
             fontFamily: "Montserrat",
             fontSize: "14px",
@@ -329,6 +334,12 @@ const Footer = () => {
       </Container>
       {/* Footer links  */}
       <FooterLinks />
+      <TryAiraDialog
+        open={openTryAIRADialog}
+        handleClose={() => {
+          setOpenTryAIRADialog(false);
+        }}
+      />
     </Box>
   )
 }

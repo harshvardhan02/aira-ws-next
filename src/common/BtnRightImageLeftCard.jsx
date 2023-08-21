@@ -52,7 +52,7 @@ const BtnRightImageLeftCard = (props) => {
           </Card>
         </Grid>
         <Grid item xs={12} sm={7}>
-          <img
+          <Image
             src={imgSrc}
             alt={cardTitle}
             width={0}

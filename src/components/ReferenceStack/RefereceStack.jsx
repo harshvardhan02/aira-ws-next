@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
 import Marquee from "react-fast-marquee";
 import Colors from '@/common/Colorscomponents';
+import Image from 'next/image';
 
 const REFERENCES = [
   { id: "amedisys", image: "amedisys.png" },
@@ -46,7 +47,17 @@ const RefereceStack = () => {
               <Card key={id}>
                 <CardContent sx={{ flex: 1 }}>
                   <div>
-                    <img src={`/images/home/references/${image}`} alt={id} />
+                    <Image
+                      src={`/images/home/references/${image}`}
+                      alt={id}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{
+                        height: "100%",
+                        width: "100%",
+                      }}
+                    />
                   </div>
                 </CardContent>
               </Card>
