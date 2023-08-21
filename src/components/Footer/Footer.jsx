@@ -17,6 +17,7 @@ import FooterLinks from '../FooterLinks/FooterLinks';
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router';
 import TryAiraDialog from '../TryAiraDialog/TryAiraDialog';
+import Link from 'next/link';
 // import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 // import FlagFrance from "/FlagFrance.png";
 // import FlagIndia from "/flagIndia.png";
@@ -222,24 +223,56 @@ const Footer = () => {
                     <Box gap={1} sx={{ my: 1 }}>
                       {item.lists.map((listItem, listIdx) => {
                         return (
-                          <Typography
-                            onClick={() => footerNavigation(listItem.route)}
-                            my={1}
-                            variant="subtitle2"
-                            className="text-nowrap"
-                            key={listItem.route}
-                            sx={{
-                              cursor: "pointer",
-                              "&:hover": {
-                                //color: Colors.airaPrimary,
-                                //color: "#000",
-                                // fontWeight: 600,
-                                color: Colors.airaSecondary,
-                              },
-                            }}
-                          >
-                            {t(listItem.label)}
-                          </Typography>
+                          <>
+                            {listItem.label === "Documentation" ?
+                              <Link
+                                href={`http://wiki.aira.technology:8000/en/home`}
+                                style={{
+                                  textDecoration: "none",
+                                  color: "#000",
+                                }}
+                                target="_blank"
+                              >
+                                <Typography
+                                  my={1}
+                                  variant="subtitle2"
+                                  className="text-nowrap"
+                                  key={listItem.route}
+                                  sx={{
+                                    cursor: "pointer",
+                                    "&:hover": {
+                                      //color: Colors.airaPrimary,
+                                      //color: "#000",
+                                      // fontWeight: 600,
+                                      color: Colors.airaSecondary,
+                                    },
+                                  }}
+                                >
+                                  {t(listItem.label)}
+                                </Typography>
+                              </Link>
+                              :
+                              <Typography
+                                onClick={() => footerNavigation(listItem.route)}
+                                my={1}
+                                variant="subtitle2"
+                                className="text-nowrap"
+                                key={listItem.route}
+                                sx={{
+                                  cursor: "pointer",
+                                  "&:hover": {
+                                    //color: Colors.airaPrimary,
+                                    //color: "#000",
+                                    // fontWeight: 600,
+                                    color: Colors.airaSecondary,
+                                  },
+                                }}
+                              >
+                                {t(listItem.label)}
+                              </Typography>
+                            }
+
+                          </>
                         );
                       })}
                     </Box>

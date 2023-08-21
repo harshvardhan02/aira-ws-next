@@ -444,7 +444,7 @@ const Header = () => {
                       <Grid zeroMinWidth item xs={6}>
                         <Box sx={hoverSx} onClick={() => handleNavigateSupport()}>
                           <Stack direction="column" justifyContent="center">
-                            <MdSupportAgent color='#6755DF' size={25} />
+                            <MdSupportAgent color='#6755DF' size={30} />
                             <Typography sx={{ mt: 1.5 }} variant='h6' fontSize={14} fontWeight="bold">
                               Sales Support
                             </Typography>
@@ -457,7 +457,7 @@ const Header = () => {
                       <Grid zeroMinWidth item xs={6}>
                         <Box sx={hoverSx} onClick={() => handleNavigateSupport()}>
                           <Stack direction="column" justifyContent="center">
-                            <BsPersonGear color='#6755DF' size={25} />
+                            <BsPersonGear color='#6755DF' size={30} />
                             <Typography sx={{ mt: 1.5 }} variant='h6' fontSize={14} fontWeight="bold">
                               Technical Support
                             </Typography>
