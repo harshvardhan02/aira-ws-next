@@ -76,7 +76,7 @@ const index = () => {
                     </span>
                   </Typography>
                   <Typography variant="body1" sx={{ my: 3 }}>
-                    In today's banks, the value of automation might be the only thing that isn't transitory
+                    In todays banks, the value of automation might be the only thing that isnt transitory
                   </Typography>
                 </Box>
               </Stack>
@@ -357,7 +357,7 @@ const index = () => {
               More <span style={{ color: Colors.airaSecondary }}>in Banking Automation</span>
             </Typography>
             <Typography textAlign={'center'} fontSize={'20'} sx={{ mt: 2, mb: 4 }}>
-              Don't miss these resources, upcoming events, and recaps
+              Dont miss these resources, upcoming events, and recaps
             </Typography>
           </Stack>
           <Grid container spacing={3}>
