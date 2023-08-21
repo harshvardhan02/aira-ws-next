@@ -8,7 +8,8 @@ import {
   MenuItem,
   Stack,
   Typography,
-  Grid
+  Grid,
+  Popover
 } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
@@ -161,6 +162,14 @@ const getDesiredWidth = (id) => {
   } else {
     return '250px'
   }
+}
+
+const hoverSx = {
+  "&:hover": {
+    backgroundColor: '#f5f5f5',
+    cursor: 'pointer',
+  },
+  padding: '40px 30px'
 }
 
 const Header = () => {
@@ -413,47 +422,54 @@ const Header = () => {
                 <IconButton sx={{ m: 0, display: { xs: "none", md: 'block' } }} onClick={handleSupportClick} size="small">
                   <Image height={50} width={50} src="/support.svg" alt="Support" />
                 </IconButton>
-                <Menu
+                <Popover
                   anchorEl={userAnchorEl}
                   open={openUserMenu}
                   onClose={handleSupportClose}
                   MenuListProps={{
                     "aria-labelledby": "basic-button",
                   }}
+                  // sx={{ maxHeight: 400 }}
                   anchorOrigin={{
                     vertical: 'bottom',
                     horizontal: 'left',
                   }}
                   transformOrigin={{
                     vertical: 'top',
-                    horizontal: 'right',
+                    horizontal: 'center',
                   }}
                 >
-                  {/* <MenuItem> */}
-                  <Grid container wrap='nowrap'>
-                    <Grid zeroMinWidth item xs={6}>
-                      <MenuItem sx={{ width: 200 }} onClick={() => handleNavigateSupport()}>
-                        <Stack direction="column" justifyContent="center">
-                          <MdSupportAgent color='#6755DF' size={25} />
-                          <Typography variant='h6' fontSize={14} fontWeight="bold">
-                            Sales Support
-                          </Typography>
-                        </Stack>
-                      </MenuItem>
+                  <Stack sx={{ width: 660 }} justifyContent="center">
+                    <Grid container wrap='nowrap' columnSpacing={2}>
+                      <Grid zeroMinWidth item xs={6}>
+                        <Box sx={hoverSx} onClick={() => handleNavigateSupport()}>
+                          <Stack direction="column" justifyContent="center">
+                            <MdSupportAgent color='#6755DF' size={25} />
+                            <Typography sx={{ mt: 1.5 }} variant='h6' fontSize={14} fontWeight="bold">
+                              Sales Support
+                            </Typography>
+                            <Typography variant='subtitle2' fontSize={12}>
+                              Have a question? Our team is here to help guide you on your automation journey.
+                            </Typography>
+                          </Stack>
+                        </Box>
+                      </Grid>
+                      <Grid zeroMinWidth item xs={6}>
+                        <Box sx={hoverSx} onClick={() => handleNavigateSupport()}>
+                          <Stack direction="column" justifyContent="center">
+                            <BsPersonGear color='#6755DF' size={25} />
+                            <Typography sx={{ mt: 1.5 }} variant='h6' fontSize={14} fontWeight="bold">
+                              Technical Support
+                            </Typography>
+                            <Typography variant='subtitle2' fontSize={12}>
+                              Explore support plans designed to match your business requirements.
+                            </Typography>
+                          </Stack>
+                        </Box>
+                      </Grid>
                     </Grid>
-                    <Grid zeroMinWidth item xs={6}>
-                      <MenuItem sx={{ width: 200 }} onClick={() => handleNavigateSupport()}>
-                        <Stack direction="column" justifyContent="center">
-                          <BsPersonGear color='#6755DF' size={25} />
-                          <Typography variant='h6' fontSize={14} fontWeight="bold">
-                            Technical Support
-                          </Typography>
-                        </Stack>
-                      </MenuItem>
-                    </Grid>
-                  </Grid>
-                  {/* </MenuItem> */}
-                </Menu>
+                  </Stack>
+                </Popover>
               </div>
               <IconButton sx={{ m: 0 }} onClick={() => { }} size="small">
                 <Image height={50} width={50} src="/person.svg" alt="Person" />
