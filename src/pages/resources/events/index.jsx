@@ -240,7 +240,7 @@ const index = () => {
           <Grid container spacing={3}>
             {EVENTS_DATA.map((blogItem, blogIdx) => {
               return (
-                <Grid item xs={12} md={4} key={blogItem.id}>
+                <Grid item xs={12} md={4} key={blogIdx}>
                   <EventCard {...blogItem} />
                 </Grid>
               );
