@@ -15,25 +15,6 @@ import {
 import Image from 'next/image';
 import AIRAMonoLinesLeft from '@/components/AIRAMonoLinesLeft/AIRAMonoLinesLeftcomponents';
 import Colors from '@/common/Colorscomponents';
-import { styled } from '@mui/material/styles';
-
-const InputField = styled('input')({
-  display: 'block',
-  width: '100%',
-  padding: '0.375rem 0.75rem',
-  fontSize: '1rem',
-  fontWeight: 400,
-  lineHeight: 1.5,
-  color: '#212529',
-  backgroundColor: '#fff',
-  backgroundClip: 'padding-box',
-  border: '1px solid #ced4da',
-  appearance: 'none',
-  borderRadius: '0.375rem',
-  transition: 'border-color .15s ease -in -out, box - shadow .15s ease -in -out'
-})
-
-const IMGBASEURL = "/images/blogs";
 
 const DISCOVER_ITEMS = [
   {
