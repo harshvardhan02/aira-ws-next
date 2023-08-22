@@ -15,35 +15,6 @@ import Offering from '@/components/Offering/Offeringcomponents';
 import ConnectToSystem from '@/components/ConnectToSystem/ConnectToSystemcomponents';
 import DiscoverStack from '../components/DiscoverStack/DiscoverStack';
 import TryAiraDialog from '@/components/TryAiraDialog/TryAiraDialogcomponents';
-import axios from 'axios';
-import xml2js from 'xml2js';
-
-async function convertXmlToJsonFromLink(xmlUrl) {
-  try {
-    // Fetch the XML data from the URL
-    const response = await axios.get(xmlUrl);
-    const xmlData = response.data;
-
-    // Parse XML to JSON using xml2js library
-    const parser = new xml2js.Parser();
-    const jsonData = await parser.parseStringPromise(xmlData);
-
-    return jsonData;
-  } catch (error) {
-    console.error('Error converting XML to JSON:', error);
-    throw error;
-  }
-}
-
-const xmlUrl = 'https://aira.fr/category/blogs/Blogs/feed/';
-
-convertXmlToJsonFromLink(xmlUrl)
-  .then(jsonData => {
-    console.log('JSON Data:', jsonData);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
 
 const EBONYHEIGHT = "600";
 
