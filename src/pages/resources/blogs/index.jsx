@@ -20,7 +20,6 @@ import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrow
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import styles from '../../../styles/Home.module.css';
 import { styled } from '@mui/material/styles';
-import XMLParser from 'react-xml-parser';
 
 const InputField = styled('input')({
   display: 'block',
