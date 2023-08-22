@@ -15,9 +15,10 @@ h5 {
   color: #fff !important;
   background-color: #6755DF !important;
   border-radius: 8px !important;
+  width: 100% !important;
 }
 
-.css-10d9dml-MuiTabs-indicator {
+.MuiTabs-indicator {
   background-color: #fff !important;
   width: 0px !important;
 }
