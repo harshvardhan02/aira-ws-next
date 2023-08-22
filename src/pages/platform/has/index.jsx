@@ -232,7 +232,7 @@ const index = () => {
         </Container>
       </Box>
 
-      <Box sx={{ backgroundColor: '#F0F0F0', py: 10 }}>
+      {/* <Box sx={{ backgroundColor: '#F0F0F0', py: 10 }}>
         <Container maxWidth="lg">
           <Grid container spacing={3}>
             <Grid item xs={12} md={4}>
@@ -330,7 +330,7 @@ const index = () => {
             </Grid>
           </Grid>
         </Container>
-      </Box>
+      </Box> */}
 
       <Container maxWidth="lg" sx={{ my: 10 }}>
         <Stack gap={4}>
@@ -350,7 +350,7 @@ const index = () => {
         </Stack>
       </Container>
 
-      <Box sx={{ backgroundColor: '#F0F0F0', py: 10, mb: 5 }}>
+      {/* <Box sx={{ backgroundColor: '#F0F0F0', py: 10, mb: 5 }}>
         <Container maxWidth="lg">
           <Stack>
             <Typography fontSize={'40px'} variant="h4" sx={{ fontWeight: 700, textAlign: 'center' }}>
@@ -456,7 +456,7 @@ const index = () => {
             </Grid>
           </Grid>
         </Container>
-      </Box>
+      </Box> */}
 
       <Box
         style={{

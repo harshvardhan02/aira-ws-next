@@ -54,7 +54,7 @@ const Index = () => {
                 >
                   Welcome to <br /> in the knowyour Partner portal
                 </Typography>
-                <Box sx={{ display: 'flex', flexDirection: 'column', width: { xs: "100%", md: "50" } }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', width: "60%" }}>
                   <Button
                     onClick={() => handleNavigation('/register')}
                     variant="outlined"
@@ -113,6 +113,7 @@ const Index = () => {
           <Button
             variant="outlined"
             color="secondary"
+            onClick={() => handleNavigation('/contact')}
             sx={{
               mt: 2,
               border: "1px solid #000",
