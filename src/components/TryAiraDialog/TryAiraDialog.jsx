@@ -42,25 +42,26 @@ const TryAiraDialog = (props) => {
       >
         <DialogContent sx={{ borderRadius: "20px" }}>
           <Stack
-            direction="row"
+            direction={{ xs: 'row', md: 'row' }}
             alignItems="center"
             justifyContent="space-between"
-            sx={{ mb: 4 }}
           >
             <Box>
-              <Image width={120} height={60} src="/airalogo.svg" priority alt="AIRA Logo" />
-            </Box>
-            <Box sx={{ textAlign: "center" }}>
-              <Typography variant="body1" sx={{ fontWeight: 700 }}>
-                Share your details and we’d get back to you.
-              </Typography>
+              <Box>
+                <Image width={120} height={60} src="/airalogo.svg" priority alt="AIRA Logo" />
+              </Box>
             </Box>
             <IconButton onClick={handleClose}>
               <CloseIcon />
             </IconButton>
           </Stack>
+          <Box sx={{ textAlign: "center" }}>
+            <Typography variant="body1" sx={{ fontWeight: 700 }}>
+              Share your details and we’d get back to you.
+            </Typography>
+          </Box>
 
-          <Divider sx={{ mb: 1 }} />
+          <Divider sx={{ my: 2 }} />
 
           <Grid container spacing={3}>
             <Grid

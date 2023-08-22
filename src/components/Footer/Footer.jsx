@@ -223,10 +223,10 @@ const Footer = () => {
                     <Box gap={1} sx={{ my: 1 }}>
                       {item.lists.map((listItem, listIdx) => {
                         return (
-                          <Box key={listIdx.route}>
+                          <Box key={listIdx}>
                             {listItem.label === "Documentation" ?
                               <Link
-                                key={listIdx.route}
+                                // key={listIdx.route}
                                 href={`http://wiki.aira.technology:8000/en/home`}
                                 style={{
                                   textDecoration: "none",
@@ -258,7 +258,7 @@ const Footer = () => {
                                 my={1}
                                 variant="subtitle2"
                                 className="text-nowrap"
-                                key={listItem.route}
+                                // key={listItem.route}
                                 sx={{
                                   cursor: "pointer",
                                   "&:hover": {

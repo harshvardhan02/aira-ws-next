@@ -10,10 +10,17 @@ import {
 import Image from 'next/image';
 import Colors from '@/common/Colorscomponents';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useRouter } from 'next/navigation'
 
 const IMGBASEURL = "/images/events";
 
-const index = () => {
+const Index = () => {
+  const router = useRouter();
+
+  const handleNavigation = (route) => {
+    router.push(route, { scroll: false })
+  }
+
   return (
     <Box sx={{ backgroundColor: "##F8F9FB", position: "relative", pt: 9, mb: 10 }}>
       <Container maxWidth="md">
@@ -29,7 +36,8 @@ const index = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 borderTopLeftRadius: "15px",
-                borderBottomLeftRadius: "15px",
+                borderBottomLeftRadius: { xs: "0px", md: "15px" },
+                borderTopRightRadius: { xs: "15px", md: "0px" },
                 p: 4,
               }}
             >
@@ -46,8 +54,9 @@ const index = () => {
                 >
                   Welcome to <br /> in the knowyour Partner portal
                 </Typography>
-                <Box sx={{ display: 'flex', flexDirection: 'column', width: "50%" }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', width: { xs: "100%", md: "50" } }}>
                   <Button
+                    onClick={() => handleNavigation('/register')}
                     variant="outlined"
                     color="secondary"
                     sx={{
@@ -65,6 +74,7 @@ const index = () => {
                     Register now
                   </Button>
                   <Button
+                    onClick={() => handleNavigation('/login')}
                     variant="outlined"
                     color="secondary"
                     sx={{
@@ -91,8 +101,9 @@ const index = () => {
                   backgroundRepeat: 'no-repeat',
                   backgroundPosition: 'center center',
                   height: '280px',
-                  borderTopRightRadius: "15px",
-                  borderBottomRightRadius: "15px"
+                  borderTopRightRadius: { xs: "0px", md: "15px" },
+                  borderBottomRightRadius: "15px",
+                  borderBottomLeftRadius: { xs: "15px", md: "0px" }
                 }}
               ></Box>
             </Grid>
@@ -123,7 +134,7 @@ const index = () => {
             endIcon={<ArrowForwardIcon />}
             sx={{
               mt: 2,
-              ml: 2,
+              ml: { sx: 0, md: 2 },
               border: "1px solid #000",
               color: "#fff",
               borderRadius: "10px",
@@ -143,4 +154,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
