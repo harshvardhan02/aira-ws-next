@@ -118,24 +118,24 @@ const SOLUTIONSSECTION = [
     title: "By Technology",
     icon: "/technology.png",
     links: [
-      {
-        title: "ServiceNow",
-        id: "solutions/service_now",
-        icon: <FaSalesforce fontSize={ICON_SIZE} />,
-      },
+      // {
+      //   title: "ServiceNow",
+      //   id: "solutions/service_now",
+      //   icon: <FaSalesforce fontSize={ICON_SIZE} />,
+      // },
       {
         title: "Salesforce",
         id: "solutions/salesforce",
         icon: <FaSalesforce fontSize={ICON_SIZE} />,
       },
       { title: "SAP", id: "solutions/sap", icon: <SiSap fontSize={ICON_SIZE} /> },
-      { title: "Jira", id: "solutions/jira", icon: <SiJira fontSize={ICON_SIZE} /> },
+      // { title: "Jira", id: "solutions/jira", icon: <SiJira fontSize={ICON_SIZE} /> },
       { title: "AWS", id: "solutions/aws", icon: <FaAws fontSize={ICON_SIZE} /> },
-      {
-        title: "Oracle",
-        id: "solutions/oracle",
-        icon: <SiOracle fontSize={ICON_SIZE} />,
-      },
+      // {
+      //   title: "Oracle",
+      //   id: "solutions/oracle",
+      //   icon: <SiOracle fontSize={ICON_SIZE} />,
+      // },
       {
         title: "Hubspot",
         id: "solutions/hubspot",
