@@ -5,6 +5,10 @@ import {
   Stack,
   Typography,
   Container,
+  Card,
+  CardContent,
+  Button,
+  Divider
 } from "@mui/material";
 
 import Colors from '@/common/Colorscomponents';
@@ -16,6 +20,10 @@ import { LiaCoinsSolid } from "react-icons/lia";
 import BtnLeftImageRightCard from '@/common/BtnLeftImageRightCardcomponents';
 import BtnRightImageLeftCard from '@/common/BtnRightImageLeftCardcomponents';
 import _ from "lodash";
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const IMGBASEURL = "/images/careers";
 
@@ -49,7 +57,75 @@ const LR_ITEMS = [
   },
 ];
 
-const index = () => {
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`vertical-tabpanel-${index}`}
+      aria-labelledby={`vertical-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Card sx={{ p: 3 }}>
+          <Stack direction={'row'} alignItems={'center'}>
+            <HiChevronLeft size={16} color={Colors.airaSecondary} />
+            <Typography sx={{ px: 2 }} color={Colors.airaSecondary}>{index + 1} / 4</Typography>
+            <HiChevronRight size={16} color={Colors.airaSecondary} />
+          </Stack>
+          {children}
+        </Card>
+      )}
+    </div>
+  );
+}
+
+function TabPanelNew(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`vertical-tabpanel-${index}`}
+      aria-labelledby={`vertical-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Card sx={{ p: 3 }}>
+          <Stack direction={'row'} alignItems={'center'}>
+            <HiChevronLeft size={16} color={Colors.airaSecondary} />
+            <Typography sx={{ px: 2 }} color={Colors.airaSecondary}>{index + 1} / 4</Typography>
+            <HiChevronRight size={16} color={Colors.airaSecondary} />
+          </Stack>
+          {children}
+        </Card>
+      )}
+    </div>
+  );
+}
+
+function a11yProps(index) {
+  return {
+    id: `vertical-tab-${index}`,
+    'aria-controls': `vertical-tabpanel-${index}`,
+  };
+}
+
+const Index = () => {
+  const [value, setValue] = React.useState(0);
+  const [newValue, setNewValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const handleChangeNew = (event, newValue) => {
+    setNewValue(newValue)
+  }
+
   return (
     <Box width="100" >
       <Box sx={{ backgroundColor: "##F8F9FB", position: "relative", pt: { xs: 0, lg: 10 } }}>
@@ -232,6 +308,173 @@ const index = () => {
         </Container>
       </Box>
 
+      <Container maxWidth="lg">
+        <Box
+          sx={{ my: 10 }}
+        >
+          <Stack direction="column" alignItems="center" justifyContent="center">
+            <Typography variant="h5" sx={{ fontWeight: 600, mb: 5 }}>
+              RPA to ease off <br />
+              <span style={{ color: Colors.airaSecondary }}>
+                compliance issues
+              </span>
+            </Typography>
+            <Grid container spacing={5}>
+              <Grid item xs={12} md={6}>
+                <Box sx={{ backgroundColor: '#f1f1f1', height: '100%' }}>
+
+                </Box>
+                {/* <Image
+                  src="/images/solutions/banking/compliance.png"
+                  alt="bankingheader"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '100%', height: 'auto' }}
+                /> */}
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Typography variant="h6" sx={{ my: 1, fontWeight: 700 }}>
+                  We offer the best <br /> business ideas
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  sx={{ my: 1, fontWeight: 600, lineHeight: 2 }}
+                >
+                  The ever-changing consumer demands and regulatory environments
+                  continue to pose a constant challenge for the banking and
+                  financial institutions.
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  sx={{ my: 2, fontWeight: 400, lineHeight: 2 }}
+                >
+                  Using intelligent technology such as RPA can help you cut down
+                  the operational costs and the time involved in addressing these
+                  challenges.
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  sx={{ my: 1, fontWeight: 400, lineHeight: 2 }}
+                >
+                  From sales processes to loan repayment, automation is changing
+                  each aspect of the banking and finance industry. That’s where
+                  AIRA’s digital solutions help you. Powered by advanced
+                  technologies, AIRA sets you free from past limitations and
+                  allows you to gain complete control over your compliance costs
+                  so that you can make the process more intelligent than it ever
+                  was.
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  sx={{ my: 1, fontWeight: 400, lineHeight: 2 }}
+                >
+                  From sales processes to loan repayment, automation is changing
+                  each aspect of the banking and finance industry. That’s where
+                  AIRA’s digital solutions help you. Powered by advanced
+                  technologies, AIRA sets you free from past limitations and
+                  allows you to gain complete control over your compliance costs
+                  so that you can make the process more intelligent than it ever
+                  was.
+                </Typography>
+              </Grid>
+            </Grid>
+          </Stack>
+        </Box>
+      </Container>
+
+      <Box sx={{ my: 5 }}>
+        <Container maxWidth="lg">
+          <Grid container justifyContent={'center'} alignItems={'center'} spacing={4}>
+            <Grid item xs={12} md={5}>
+              <Image
+                src={'/images/has/rectangle48.png'}
+                alt='has'
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </Grid>
+            <Grid item xs={12} md={7}>
+              <Typography fontSize={32} fontWeight={700} color={Colors.black}>
+                <span style={{ color: Colors.airaSecondary }}>Learn to automate </span> with Truist, Wells Fargo, Bain & Company, BNY Mellon | Pershing, JP Morgan Chase, Cowen, and more
+              </Typography>
+              <Button
+                variant='contained'
+                endIcon={<ArrowForwardIcon />}
+                sx={{ borderRadius: '50px', backgroundColor: Colors.airaPrimary, mt: 2 }}
+              >
+                Send me the recording
+              </Button>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
+      <Container maxWidth="md">
+        <Divider sx={{ my: 8 }} light />
+      </Container>
+
+      <Box sx={{ my: 10 }}>
+        <Container maxWidth="lg">
+          <Typography textAlign={'center'} fontSize={18}>
+            TOP AUTOMATION AREAS
+          </Typography>
+          <Typography textAlign={'center'} fontSize={40} fontWeight={700}>
+            <span style={{ color: Colors.airaPrimary }}>Banking and Financial</span> Services Automation
+          </Typography>
+
+          <Box sx={{ mx: "auto", my: 3 }} gap={1}>
+            <Grid container direction="row">
+              <Grid item xs={12} sm={5}>
+                <Image
+                  src="/images/has/rectangle49.png"
+                  alt="rectangle49"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    borderRadius: "12px",
+                    zindex: -1,
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} sm={5} justifySelf="center" alignSelf="center">
+                <Card
+                  raised
+                  sx={{
+                    borderRadius: "12px",
+                    ml: { xs: "0%", md: "-20%" },
+                    position: "relative",
+                    zIndex: 1,
+                  }}
+                >
+                  <CardContent sx={{ pl: 3 }}>
+                    <Typography
+                      variant="h6"
+                      sx={{ color: Colors.airaSecondary, fontWeight: 600, mb: 1 }}
+                    >
+                      Consumer Banking
+                    </Typography>
+                    <Typography fontSize={20} fontWeight={600}>
+                      Efficient workflows appraise high. Capture that value with automation.
+                    </Typography>
+                    <Typography sx={{ mt: 3 }} fontSize={16} fontWeight={400}>
+                      UiPath delivers a new standard in efficiency. By elevating customer journeys, accelerating lending timelines, and modernizing KYC, automation brings Consumer Banks into todays digital age. And shortly thereafter, helps them revolutionize their entire way of operating (and innovating!)
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </Box>
+        </Container>
+      </Box>
+
+
+
       {/* <Box sx={{ backgroundColor: '#F0F0F0', py: 10 }}>
         <Container maxWidth="lg">
           <Grid container spacing={3}>
@@ -332,7 +575,7 @@ const index = () => {
         </Container>
       </Box> */}
 
-      <Container maxWidth="lg" sx={{ my: 10 }}>
+      {/* <Container maxWidth="lg" sx={{ my: 10 }}>
         <Stack gap={4}>
           {LR_ITEMS.map((lrItem, lrIdx) => {
             let { direction, imgSrc, ...restItems } = lrItem;
@@ -348,9 +591,271 @@ const index = () => {
             );
           })}
         </Stack>
+      </Container> */}
+
+      <Container maxWidth="lg">
+        <Grid container>
+          <Grid item xs={12} md={5}>
+            <Tabs
+              orientation="vertical"
+              value={value}
+              onChange={handleChange}
+              aria-label="Vertical tabs example"
+            >
+              <Tab label="Lending" {...a11yProps(0)} />
+              <Tab label="Customer Experience" {...a11yProps(1)} />
+              <Tab label="Cards and Payments" {...a11yProps(2)} />
+              <Tab label="Risk & Compliance" {...a11yProps(3)} />
+            </Tabs>
+          </Grid>
+          <Grid item xs={12} md={7}>
+            <TabPanel value={value} index={0}>
+              <Stack direction={'column'}>
+                <Typography color={Colors.airaPrimary} fontWeight={700} fontSize={'24px'}>
+                  Lending
+                </Typography>
+                <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                  Inefficient lending cycles? We can lend a hand
+                </Typography>
+                <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={400} fontSize={'16px'}>
+                  Automation helps shorten the lending cycle by digitizing documents, automating mundane tasks, and giving agents a digital sidekick.
+                </Typography>
+                <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                  Business Use Cases:
+                </Typography>
+                <ul>
+                  <li>Origination</li>
+                  <li>Loan Processing</li>
+                  <li>Underwriting</li>
+                  <li>Funding</li>
+                  <li>Administration & Monitoring</li>
+                  <li>Default Management</li>
+                </ul>
+              </Stack>
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              <Typography color={Colors.airaPrimary} fontWeight={700} fontSize={'24px'}>
+                Customer Experience
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                Inefficient lending cycles? We can lend a hand
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={400} fontSize={'16px'}>
+                Automation helps shorten the lending cycle by digitizing documents, automating mundane tasks, and giving agents a digital sidekick.
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                Business Use Cases:
+              </Typography>
+              <ul>
+                <li>Origination</li>
+                <li>Loan Processing</li>
+                <li>Underwriting</li>
+                <li>Funding</li>
+                <li>Administration & Monitoring</li>
+                <li>Default Management</li>
+              </ul>
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+              <Typography color={Colors.airaPrimary} fontWeight={700} fontSize={'24px'}>
+                Cards and Payments
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                Inefficient lending cycles? We can lend a hand
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={400} fontSize={'16px'}>
+                Automation helps shorten the lending cycle by digitizing documents, automating mundane tasks, and giving agents a digital sidekick.
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                Business Use Cases:
+              </Typography>
+              <ul>
+                <li>Origination</li>
+                <li>Loan Processing</li>
+                <li>Underwriting</li>
+                <li>Funding</li>
+                <li>Administration & Monitoring</li>
+                <li>Default Management</li>
+              </ul>
+            </TabPanel>
+            <TabPanel value={value} index={3}>
+              <Typography color={Colors.airaPrimary} fontWeight={700} fontSize={'24px'}>
+                Risk & Compliance
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                Inefficient lending cycles? We can lend a hand
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={400} fontSize={'16px'}>
+                Automation helps shorten the lending cycle by digitizing documents, automating mundane tasks, and giving agents a digital sidekick.
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                Business Use Cases:
+              </Typography>
+              <ul>
+                <li>Origination</li>
+                <li>Loan Processing</li>
+                <li>Underwriting</li>
+                <li>Funding</li>
+                <li>Administration & Monitoring</li>
+                <li>Default Management</li>
+              </ul>
+            </TabPanel>
+          </Grid>
+        </Grid>
       </Container>
 
-      {/* <Box sx={{ backgroundColor: '#F0F0F0', py: 10, mb: 5 }}>
+      <Box sx={{ my: 10 }}>
+        <Container maxWidth="lg">
+          <Box sx={{ mx: "auto" }} gap={1}>
+            <Grid container direction="row-reverse">
+              <Grid item xs={12} sm={5}>
+                <Image
+                  src="/images/has/rectangle50.png"
+                  alt="rectangle49"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    borderRadius: "12px",
+                    zindex: -1,
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} sm={5} justifySelf="center" alignSelf="center">
+                <Card
+                  raised
+                  sx={{
+                    borderRadius: "12px",
+                    mr: { xs: "0%", md: "-20%" },
+                    position: "relative",
+                    zIndex: 1,
+                  }}
+                >
+                  <CardContent sx={{ pl: 3 }}>
+                    <Typography
+                      variant="h6"
+                      sx={{ color: Colors.airaSecondary, fontWeight: 600, mb: 1 }}
+                    >
+                      Comercial Banking
+                    </Typography>
+                    <Typography fontSize={20} fontWeight={600}>
+                      Efficient workflows appraise high. Capture that value with automation.
+                    </Typography>
+                    <Typography sx={{ mt: 3 }} fontSize={16} fontWeight={400}>
+                      UiPath delivers a new standard in efficiency. By elevating customer journeys, accelerating lending timelines, and modernizing KYC, automation brings Consumer Banks into todays digital age. And shortly thereafter, helps them revolutionize their entire way of operating (and innovating!)
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </Box>
+        </Container>
+      </Box>
+
+      <Container maxWidth="lg">
+        <Grid container>
+          <Grid item xs={12} md={5}>
+            <Tabs
+              orientation="vertical"
+              value={newValue}
+              onChange={handleChangeNew}
+              aria-label="Vertical tabs example"
+            >
+              <Tab label="Liquidity & Treasury" {...a11yProps(0)} />
+              <Tab label="Commercial Lending" {...a11yProps(1)} />
+              <Tab label="Client Management" {...a11yProps(2)} />
+              <Tab label="Risk & Compliance" {...a11yProps(3)} />
+            </Tabs>
+          </Grid>
+          <Grid item xs={12} md={7}>
+            <TabPanelNew value={newValue} index={0}>
+              <Stack direction={'column'}>
+                <Typography color={Colors.airaPrimary} fontWeight={700} fontSize={'24px'}>
+                  Liquidity & Treasury
+                </Typography>
+                <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                  Trade risky and tedious for streamlined and secured
+                </Typography>
+                <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={400} fontSize={'16px'}>
+                  Automation helps banks streamline treasury operations by increasing productivity for front office traders, enabling better risk management, and improving customer experience.
+                </Typography>
+                <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                  Business Use Cases:
+                </Typography>
+                <ul>
+                  <li>Order Management</li>
+                  <li>Order Processing</li>
+                  <li>Fee Management</li>
+                  <li>Customer Support</li>
+                </ul>
+              </Stack>
+            </TabPanelNew>
+            <TabPanelNew value={newValue} index={1}>
+              <Typography color={Colors.airaPrimary} fontWeight={700} fontSize={'24px'}>
+                Commercial Lending
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                Trade risky and tedious for streamlined and secured
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={400} fontSize={'16px'}>
+                Automation helps banks streamline treasury operations by increasing productivity for front office traders, enabling better risk management, and improving customer experience.
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                Business Use Cases:
+              </Typography>
+              <ul>
+                <li>Order Management</li>
+                <li>Order Processing</li>
+                <li>Fee Management</li>
+                <li>Customer Support</li>
+              </ul>
+            </TabPanelNew>
+            <TabPanelNew value={newValue} index={2}>
+              <Typography color={Colors.airaPrimary} fontWeight={700} fontSize={'24px'}>
+                Client Management
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                Trade risky and tedious for streamlined and secured
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={400} fontSize={'16px'}>
+                Automation helps banks streamline treasury operations by increasing productivity for front office traders, enabling better risk management, and improving customer experience.
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                Business Use Cases:
+              </Typography>
+              <ul>
+                <li>Order Management</li>
+                <li>Order Processing</li>
+                <li>Fee Management</li>
+                <li>Customer Support</li>
+              </ul>
+            </TabPanelNew>
+            <TabPanelNew value={newValue} index={3}>
+              <Typography color={Colors.airaPrimary} fontWeight={700} fontSize={'24px'}>
+                Risk & Compliance
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                Trade risky and tedious for streamlined and secured
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={400} fontSize={'16px'}>
+                Automation helps banks streamline treasury operations by increasing productivity for front office traders, enabling better risk management, and improving customer experience.
+              </Typography>
+              <Typography sx={{ pt: 2 }} color={Colors.black} fontWeight={600} fontSize={'20px'}>
+                Business Use Cases:
+              </Typography>
+              <ul>
+                <li>Order Management</li>
+                <li>Order Processing</li>
+                <li>Fee Management</li>
+                <li>Customer Support</li>
+              </ul>
+            </TabPanelNew>
+          </Grid>
+        </Grid>
+      </Container>
+
+      <Box sx={{ backgroundColor: '#F0F0F0', py: 10, my: 5 }}>
         <Container maxWidth="lg">
           <Stack>
             <Typography fontSize={'40px'} variant="h4" sx={{ fontWeight: 700, textAlign: 'center' }}>
@@ -374,7 +879,7 @@ const index = () => {
               </Box>
               <Stack direction={'column'} sx={{ backgroundColor: '#fff', p: 3 }} >
                 <Typography fontSize={'14px'} color={'#6755DF'} sx={{ mt: 1 }}>
-                  CASE STUDY
+                  WHITE PAPER
                 </Typography>
                 <Typography lineHeight={'28px'} fontSize={'20px'} color={'#6755DF'} sx={{ mt: 1 }}>
                   A Complete Guide to UiPath—made in collaboration with ERP Today
@@ -405,7 +910,7 @@ const index = () => {
               </Box>
               <Stack direction={'column'} sx={{ backgroundColor: '#fff', p: 3 }} >
                 <Typography fontSize={'14px'} color={'#6755DF'} sx={{ mt: 1 }}>
-                  CASE STUDY
+                  WEBINAR
                 </Typography>
                 <Typography lineHeight={'28px'} fontSize={'20px'} color={'#6755DF'} sx={{ mt: 1 }}>
                   A Complete Guide to UiPath—made in collaboration with ERP Today
@@ -436,7 +941,7 @@ const index = () => {
               </Box>
               <Stack direction={'column'} sx={{ backgroundColor: '#fff', p: 3 }} >
                 <Typography fontSize={'14px'} color={'#6755DF'} sx={{ mt: 1 }}>
-                  CASE STUDY
+                  WHITE PAPER
                 </Typography>
                 <Typography lineHeight={'28px'} fontSize={'20px'} color={'#6755DF'} sx={{ mt: 1 }}>
                   A Complete Guide to UiPath—made in collaboration with ERP Today
@@ -456,7 +961,7 @@ const index = () => {
             </Grid>
           </Grid>
         </Container>
-      </Box> */}
+      </Box>
 
       <Box
         style={{
@@ -472,4 +977,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

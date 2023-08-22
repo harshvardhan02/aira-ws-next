@@ -10,3 +10,14 @@ h4,
 h5 {
   font-family: 'Montserrat', sans-serif !important;
 }
+
+.Mui-selected {
+  color: #fff !important;
+  background-color: #6755DF;
+  border-radius: 8px;
+}
+
+.css-10d9dml-MuiTabs-indicator {
+  background-color: #fff;
+  width: 0px;
+}
