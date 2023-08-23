@@ -278,7 +278,7 @@ const index = () => {
             </Grid>
             <Grid container item xs={12} md={3}>
               <Stack direction={'column'}>
-                <AIRAButton variant='outlined' fullWidth endIcon={<CiSearch />}>
+                <AIRAButton variant='outlined' fullWidth>
                   Technology Partners
                 </AIRAButton>
                 <Stack sx={{ mt: 1 }} color={'#988AF5'} fontSize={'20px'} fontWeight={600}>
