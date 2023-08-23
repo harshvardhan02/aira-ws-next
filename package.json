@@ -34,6 +34,7 @@
     "react-i18next": "^13.1.2",
     "react-icons": "^4.10.1",
     "react-select": "^5.7.4",
+    "react-slick": "^0.29.0",
     "react-xml-parser": "^1.1.8",
     "styled-components": "^6.0.7",
     "xml2js": "^0.6.2"
