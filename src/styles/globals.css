@@ -125,25 +125,41 @@ tr:nth-child(29) {
   border-bottom: 1px solid #ced8e0;
 }
 
+td:nth-child(2) {
+  text-align: center;
+}
+
+td:nth-child(3) {
+  text-align: center;
+}
+
+td:nth-child(4) {
+  text-align: center;
+}
+
+td:nth-child(5) {
+  text-align: center;
+}
+
 /* td:nth-child(2), */
 th:nth-child(2) {
   background-color: #F1F0FF;
   border-top-left-radius: 8px;
-  padding: 15px 0;
+  padding: 15px 40px;
 }
 
 th:nth-child(3) {
   background-color: #F1F0FF;
-  padding: 15px 0;
+  padding: 15px 40px;
 }
 
 th:nth-child(4) {
   background-color: #F1F0FF;
-  padding: 15px 0;
+  padding: 15px 40px;
 }
 
 th:nth-child(5) {
   background-color: #F1F0FF;
   border-top-right-radius: 8px;
-  padding: 15px 0;
+  padding: 15px 40px;
 }
