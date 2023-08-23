@@ -17,7 +17,9 @@ import AIRAMonoLinesLeft from '@/components/AIRAMonoLinesLeft/AIRAMonoLinesLeftc
 import Colors from '@/common/Colorscomponents';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { PiSwapBold } from "react-icons/pi";
 import { FiCheckCircle } from "react-icons/fi";
+import { BsDashLg } from "react-icons/bs";
 
 const AIRAButton = styled(Button)({
   boxShadow: 'none',
@@ -243,7 +245,7 @@ const index = () => {
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} color={'#787878'} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} color={'#787878'} lineHeight={'18px'}>
                       DISCOVER AUTOMATION OPPORTUNITIES <br /> POWERED BY AI AND YOUR PEOPLE
                     </Typography>
                   </td>
@@ -254,51 +256,51 @@ const index = () => {
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Automation Hub
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Task Capture
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Process Minig
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Task Minig
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} color={'#787878'} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} color={'#787878'} lineHeight={'18px'}>
                       BUILD AND TEST AUTOMATION QUICKLY, FROM <br /> THE SIMPLE TO THE ADVANCED
                     </Typography>
                   </td>
@@ -309,62 +311,62 @@ const index = () => {
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Automation Express
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Studio
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Automation Ops
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Document Understanding
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Integration Service
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} color={'#787878'} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} color={'#787878'} lineHeight={'18px'}>
                       BUILD AND TEST AUTOMATION QUICKLY, FROM <br /> THE SIMPLE TO THE ADVANCED
                     </Typography>
                   </td>
@@ -375,62 +377,62 @@ const index = () => {
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Orchestrator
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Data Service
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Test Manager
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       AI Center
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Insights
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} color={'#787878'} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} color={'#787878'} lineHeight={'18px'}>
                       RUN AUTOMATIONS THROUGH ROBOTS THAT <br /> WORK WITH YOUR APPLICATIONS AND DATA
                     </Typography>
                   </td>
@@ -441,51 +443,51 @@ const index = () => {
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Automation Cloud Robots
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Unattended Robots
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Attended Robots
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Test Robots
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} color={'#787878'} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} color={'#787878'} lineHeight={'18px'}>
                       ENGAGE PEOPLE AND ROBOTS AS ONE TEAM <br /> FOR SEAMLESS PROCESS COLLABORATION
                     </Typography>
                   </td>
@@ -496,23 +498,23 @@ const index = () => {
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Apps
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Action Center
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
@@ -529,26 +531,26 @@ const index = () => {
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Tenants
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
                 <tr>
                   <td>
-                    <Typography fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
+                    <Typography className='first-row' fontSize={'12px'} fontWeight={600} lineHeight={'18px'}>
                       Standard Support
                     </Typography>
                     <Typography fontSize={'12px'} fontWeight={600} color={'#787878'} lineHeight={'18px'}>
                       Additional Support options are available
                     </Typography>
                   </td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td><BsDashLg size={25} /></td>
+                  <td><BsDashLg size={25} /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                   <td><FiCheckCircle size={25} color='#6755df' /></td>
                 </tr>
@@ -602,7 +604,7 @@ const index = () => {
               >
                 <Box sx={{ pr: 2 }}>
                   <Image
-                    src="/images/person-graduate.png"
+                    src="/images/AtoB.png"
                     alt='person'
                     width={50}
                     height={50}
