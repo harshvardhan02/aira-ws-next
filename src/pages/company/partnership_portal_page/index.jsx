@@ -34,7 +34,7 @@ const Index = () => {
                 backgroundColor: Colors.airaPrimary,
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
+                // justifyContent: "center",
                 borderTopLeftRadius: "15px",
                 borderBottomLeftRadius: { xs: "0px", md: "15px" },
                 borderTopRightRadius: { xs: "15px", md: "0px" },
@@ -52,9 +52,9 @@ const Index = () => {
                   variant="h5"
                   sx={{ color: "#fff", mb: 2, fontWeight: 600 }}
                 >
-                  Welcome to <br /> in the knowyour Partner portal
+                  Welcome to <br /> your Partner portal
                 </Typography>
-                <Box sx={{ display: 'flex', flexDirection: 'column', width: "60%" }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', width: "175px" }}>
                   <Button
                     onClick={() => handleNavigation('/register')}
                     variant="outlined"

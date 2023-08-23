@@ -15,6 +15,7 @@ import Colors from '@/common/Colorscomponents';
 import { styled } from '@mui/material/styles';
 import Link from 'next/link';
 import AIRAMonoLinesLeft from '@/components/AIRAMonoLinesAuth/AIRAMonoLinesAuthcomponents';
+import { Country } from 'country-state-city';
 
 const CssTextField = styled(TextField)({
   '& label.Mui-focused': {
@@ -138,9 +139,9 @@ const Index = () => {
                     value={age}
                     onChange={handleChange}
                   >
-                    <MenuItem value={10}>India</MenuItem>
-                    <MenuItem value={20}>Dubai</MenuItem>
-                    <MenuItem value={30}>USA</MenuItem>
+                    {Country.getAllCountries().map(country => (
+                      <MenuItem key={country.isoCode} value={country.name}>{country.name}</MenuItem>
+                    ))}
                   </CssSelectField>
                 </FormControl>
               </Stack>

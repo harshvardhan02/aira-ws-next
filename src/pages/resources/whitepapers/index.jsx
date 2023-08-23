@@ -63,6 +63,30 @@ const WHITEPAPERS_DATA = [
     duration: "5 min",
     tag: "Automation",
   },
+  {
+    id: 4,
+    image: "white_paper_2.png",
+    title: "Why do Digital transformation projects fail?",
+    date: "June 8,2022",
+    duration: "5 min",
+    tag: "Automation",
+  },
+  {
+    id: 5,
+    image: "white_paper_3.png",
+    title: "Why do Digital transformation projects fail?",
+    date: "June 8,2022",
+    duration: "5 min",
+    tag: "Automation",
+  },
+  {
+    id: 6,
+    image: "white_paper_1.png",
+    title: "Why do Digital transformation projects fail?",
+    date: "June 8,2022",
+    duration: "5 min",
+    tag: "Automation",
+  },
 ];
 
 const WhitePaperCard = (props) => {
