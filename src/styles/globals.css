@@ -29,14 +29,6 @@ table {
   border-spacing: 0 10px;
 }
 
-tr:nth-child(2) {
-  /* background-color: #D6EEEE; */
-
-  /* border-bottom-color: red;
-  border-bottom-width: 10px;
-  border-bottom-style: solid; */
-}
-
 tr:nth-child(3) {
   border-bottom: 1px solid #ced8e0;
   margin: 10px 0px !important;

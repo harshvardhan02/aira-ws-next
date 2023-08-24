@@ -84,7 +84,7 @@ const AIRAButton = styled(Button)({
 
 const IMGBASEURL = "/images/brochures";
 
-const index = () => {
+const Index = () => {
   const [age, setAge] = React.useState('');
 
   const handleChange = (event) => {
@@ -298,4 +298,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
