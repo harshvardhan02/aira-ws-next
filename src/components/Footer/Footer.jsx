@@ -148,7 +148,7 @@ const FOOTERLINKS = [
   {
     title: "Support",
     lists: [
-      { label: "Sales Support", route: "sales_support" },
+      { label: "Sales Support", route: "contact" },
       { label: "Technical Support", route: "technical_support" },
     ],
     gridValue: { xs: 12, md: 5 },

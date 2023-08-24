@@ -234,7 +234,8 @@ const Header = () => {
     handleLanguageClose();
   };
 
-  const handleNavigateSupport = () => {
+  const handleNavigateSupport = (route) => {
+    push(route)
     handleSupportClose();
   }
 
@@ -442,7 +443,7 @@ const Header = () => {
                   <Stack sx={{ width: 660 }} justifyContent="center">
                     <Grid container wrap='nowrap' columnSpacing={2}>
                       <Grid zeroMinWidth item xs={6}>
-                        <Box sx={hoverSx} onClick={() => handleNavigateSupport()}>
+                        <Box sx={hoverSx} onClick={() => handleNavigateSupport('/contact')}>
                           <Stack direction="column" justifyContent="center">
                             <MdSupportAgent color='#6755DF' size={30} />
                             <Typography sx={{ mt: 1.5 }} variant='h6' fontSize={14} fontWeight="bold">
@@ -455,7 +456,7 @@ const Header = () => {
                         </Box>
                       </Grid>
                       <Grid zeroMinWidth item xs={6}>
-                        <Box sx={hoverSx} onClick={() => handleNavigateSupport()}>
+                        <Box sx={hoverSx} onClick={() => handleNavigateSupport('/company/partnership_portal_page')}>
                           <Stack direction="column" justifyContent="center">
                             <BsPersonGear color='#6755DF' size={30} />
                             <Typography sx={{ mt: 1.5 }} variant='h6' fontSize={14} fontWeight="bold">
@@ -471,7 +472,7 @@ const Header = () => {
                   </Stack>
                 </Popover>
               </div>
-              <IconButton sx={{ m: 0 }} onClick={() => { }} size="small">
+              <IconButton sx={{ m: 0 }} onClick={() => handleNavigateSupport('/login')} size="small">
                 <Image height={50} width={50} src="/person.svg" alt="Person" />
               </IconButton>
               <div>
